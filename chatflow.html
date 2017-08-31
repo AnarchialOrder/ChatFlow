@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="chatflow.css">
+  <title>Chat Flow</title>
+   <script src="chatflow.js"></script>
+</head>
+<body>
+    <div class="grid-wrapper"><!-- css grid class -->
+      <div class="griditem"><!-- header css grid class 1 header-->
+      <p>Chat Flow</p>
+    </div><!-- header -->
+      <div class="griditem"><!-- intro css grid class  2 sidebar-->
+        <div onclick="showhide('intro');">Introduction</div>
+      </div><!-- intro -->
+      <div class="griditem"><!-- verify css grid class  3 sidebar-->
+        <div onclick="showhide('verify');">Verify</div>
+      </div><!-- verify -->
+      <div class="griditem"><!-- eq-issues css grid class  4 sidebar-->
+        <div>Equipment issues</div>
+      </div><!-- Eq Issues -->
+      <div class="griditem"><!-- ed-issues css grid class  5 sidebar-->
+        <div>Educational issues</div>
+      </div><!-- Ed Issues -->
+      <div class="griditem"><!-- review css grid class  6 sidebar-->
+        <div>Review chat</div>
+      </div><!-- Review -->
+      <div class="griditem"><!-- ending css grid class  7 sidebar-->
+        <div>Ending chat</div>
+      </div><!-- Ending -->
+      <div class="griditem"><!-- notes css grid class  8 sidebar-->
+        <div>Notes</div>
+      </div><!-- notes -->
+      <div class="griditem"><!-- content css grid class  9 content-->
+        <div id='contentwrap'>
+          <div id='intro'>
+            <p>Hi, this is Tasha.</p>
+            <p>I understand that you are having an issue with        is that correct?</p>
+        </div><!-- first statement for intro-->
+          <div id='verify'>
+            <p>Thank you for confirming. I will need to verify your account<p>
+              <form action="#">
+                <label>Last four SSN</label>
+                <input type="checkbox" name="ssn">
+                <label>Full Account Number</label>
+                <input type="checkbox" name="acct">
+              </form>
+            <p id="verifyType"></p>
+          </div><!-- Verify -->
+        </div><!--content wrap -->
+      </div><!-- content -->
+      <div class="griditem"><!-- footer css grid class  10 footer-->
+        <span>Footer</span><!-- inline element for now -->
+      </div><!-- footer -->
+      <div class="griditem"><!-- copypad css grid class 11 copypad-->
+        <textarea name="copypad" id="copypad" cols="15" rows="7" placeholder="copy & paste here!"></textarea>
+        <!-- copy paste area just in case -->
+      </div><!-- copy pad -->
+      <div class="griditem"><!-- timer css grid class 12 timer-->
+        <span>text boxes for form to enter ticket and chat number</span>
+      </div><!-- simple timer-->
+    </div><!--end grid class -->
+
+<p>Where you left off:
+You just figured out that you didnt have the .js file linked.
+Next you will need to create a "clear div" to clear the center
+Then assign each div an onclick that matches hidden divs ids.
+make check boxes for some of the issues so that it copies the
+contents of the div to the notes section, making it easier to
+review. create verifytype that is based off of the checkboxes.
+</p>
+</div>
+</body>
+</html>
