@@ -11,8 +11,8 @@
 <body>
     <div class="grid-wrapper"><!-- css grid class -->
       <div class="griditem"><!-- header css grid class 1 header-->
-      <p>Chat Flow</p>
-    </div><!-- header -->
+        <p>Chat Flow</p>
+      </div><!-- header -->
       <div class="griditem"><!-- intro css grid class  2 sidebar-->
         <div onclick="showhide('intro');">Introduction</div>
       </div><!-- intro -->
@@ -20,19 +20,19 @@
         <div onclick="showhide('verify');">Verify</div>
       </div><!-- verify -->
       <div class="griditem"><!-- eq-issues css grid class  4 sidebar-->
-        <div>Equipment issues</div>
+        <div onclick="showhide('eq-issues');">Equipment issues</div>
       </div><!-- Eq Issues -->
       <div class="griditem"><!-- ed-issues css grid class  5 sidebar-->
-        <div>Educational issues</div>
+        <div onclick="showhide('ed-issues');">Educational issues</div>
       </div><!-- Ed Issues -->
       <div class="griditem"><!-- review css grid class  6 sidebar-->
-        <div>Review chat</div>
+        <div onclick="showhide('review');">Review chat</div>
       </div><!-- Review -->
       <div class="griditem"><!-- ending css grid class  7 sidebar-->
-        <div>Ending chat</div>
+        <div onclick="showhide('ending');">Ending chat</div>
       </div><!-- Ending -->
       <div class="griditem"><!-- notes css grid class  8 sidebar-->
-        <div>Notes</div>
+        <div onclick="showhide('notes');">Notes</div>
       </div><!-- notes -->
       <div class="griditem"><!-- content css grid class  9 content-->
         <div id='contentwrap'>
@@ -41,15 +41,55 @@
             <p>I understand that you are having an issue with        is that correct?</p>
         </div><!-- first statement for intro-->
           <div id='verify'>
-            <p>Thank you for confirming. I will need to verify your account<p>
-              <form action="#">
-                <label>Last four SSN</label>
-                <input type="checkbox" name="ssn">
-                <label>Full Account Number</label>
-                <input type="checkbox" name="acct">
-              </form>
-            <p id="verifyType"></p>
+            <p>What is ES asking for?</p>
+            <div>
+              <input type="checkbox" id="lastFour">
+                <label for="lastFour">Last Four SSN</label>
+                  <div class="sub">
+                    <p>Thank you for confirming. In order to proceed, I will need to verfiy your account.</p>
+                    <p>Could you please provide the following:</p>
+                    <p> - Your First Name </p>
+                    <p> - The last four digits of your Social Security Number</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" id="fullAccount">
+                <label for="fullAccount">Full Account Number</label>
+                  <div class="sub">
+                    <p>Thank you for confirming. In order to proceed, I will need to verify your account information</p>
+                    <p>Could you please provide the following:</p>
+                    <p>- Your First name</p>
+                    <p>- The full account number</p>
+                </div>
+              </div>
+              <div>
+              <input type="checkbox" id="paymentLastFour">
+                <label for="paymentLastFour">Last Four of Payment on File</label>
+                  <div class="sub">payment last four test</div>
+              </div>
+              <div>
+              <input type="checkbox" id="iDontRecall">
+                <label for="iDontRecall">I dont recall this last one</label>
+                  <div class="sub">I dont recall test</div>
+              </div>
           </div><!-- Verify -->
+          <div id='eq-issues'>
+            <p>What equipment type?</p>
+            <div>
+              <input type="checkbox" id="camera">
+                <label for="camera">Camera</label>
+                  <div class="sub">
+                    <p>If I may, I'll ask you to powercycle the camera</p>
+                    <p>This involves unplugging the camera for about twenty seconds, and then plugging it back in.</p>
+                    <p>This will reboot the camera</p>
+                    <p>Please let me know, once you've done this, what the lights on the camera or power brick are doing.</p>
+              </div>
+            </div>
+          </div>
+          <div id='ed-issues'>ed issues test</div>
+          <div id='review'>review test</div>
+          <div id='ending'>ending test</div>
+          <div id='notes'>notes test</div>
         </div><!--content wrap -->
       </div><!-- content -->
       <div class="griditem"><!-- footer css grid class  10 footer-->
@@ -64,14 +104,13 @@
       </div><!-- simple timer-->
     </div><!--end grid class -->
 
-<p>Where you left off:
-You just figured out that you didnt have the .js file linked.
-Next you will need to create a "clear div" to clear the center
+<!--Where you left off:
+
 Then assign each div an onclick that matches hidden divs ids.
 make check boxes for some of the issues so that it copies the
 contents of the div to the notes section, making it easier to
 review. create verifytype that is based off of the checkboxes.
-</p>
+-->
 </div>
 </body>
 </html>

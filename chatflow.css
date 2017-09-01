@@ -77,6 +77,8 @@
 }
 .griditem:nth-child(9) {
   grid-area: content;
+  max-height: 300px;
+  overflow-y: auto;
 
 }
 .griditem:nth-child(10) {
@@ -98,4 +100,27 @@
 }
 #contentwrap > div{
   display: none;
+}
+label {
+	display:inline-block;
+  color: #ddd;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 2px 1px 2px 1px #2a4f8c inset;
+}
+input {
+	position:absolute;
+	left:-999em
+}
+.sub {
+  display: none;
+  font-variant: small-caps;
+  font-size: 16px;
+  text-align: left;
+  transition:opacity 1.5s linear, max-height 1.5s linear;
+}
+
+input:checked ~ .sub {
+  display: block;
+  transition:opacity 1.5s linear, max-height 1.5s linear;
 }
