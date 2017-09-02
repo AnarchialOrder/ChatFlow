@@ -25,3 +25,16 @@ function showhide(id) {
         divid.style.display = (divid.style.display == 'block' ? 'none' : 'block');
     }
 }
+document.getElementsByName("chatticket").addEventListener("keyup", updateTicket, true);
+document.getElementsByName("esticket").addEventListener("keyup", updateTicket, true);
+document.getElementsByName("erone").addEventListener("keyup", updateTicket, true);
+ function updateTicket(){
+var chatTicket = document.getElementsByName("chatticket")[0].value;
+var esTicket = document.getElementsByName("esticket")[0].value;
+var erOne = document.getElementsByName("erone")[0].value;
+
+document.getElementById("chattic").innerHTML = chatTicket;
+document.getElementById("estic").innerHTML = esTicket;
+document.getElementById("ertic").innerHTML = erOne;
+
+}

@@ -2,7 +2,7 @@
   border: 2px solid black;
   color: #eee;
   background: black;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0;
 }
 .grid-wrapper{
@@ -15,9 +15,9 @@
   "sidebar2 content content copypad"
   "sidebar3 content content copypad"
   "sidebar4 content content copypad"
-  "sidebar5 content content timer"
-  "sidebar6 content content timer"
-  "sidebar7 content content timer"
+  "sidebar5 content content tickets"
+  "sidebar6 content content tickets"
+  "sidebar7 content content tickets"
   "footer footer footer footer";
 }
 .grid-wrapper > div{
@@ -90,13 +90,13 @@
 
 }
 .griditem:nth-child(12) {
-  grid-area: timer;
+  grid-area: tickets;
 
 }
 .griditem{
   width: auto;
   -moz-box-sizing: border-box;
-  text-align: center;
+  text-align: left;
 }
 #contentwrap > div{
   display: none;
@@ -114,13 +114,23 @@ input {
 }
 .sub {
   display: none;
-  font-variant: small-caps;
   font-size: 16px;
   text-align: left;
   transition:opacity 1.5s linear, max-height 1.5s linear;
 }
 
 input:checked ~ .sub {
+  display: block;
+  transition:opacity 1.5s linear, max-height 1.5s linear;
+}
+.sub1 {
+  display: none;
+  font-size: 16px;
+  text-align: left;
+  transition:opacity 1.5s linear, max-height 1.5s linear;
+}
+
+input:checked ~ .sub1 {
   display: block;
   transition:opacity 1.5s linear, max-height 1.5s linear;
 }

@@ -11,7 +11,9 @@
 <body>
     <div class="grid-wrapper"><!-- css grid class -->
       <div class="griditem"><!-- header css grid class 1 header-->
-        <p>Chat Flow</p>
+        <p>Chat Flow
+        <span style="float: right;"><textarea id="account" cols="auto" rows="1" placeholder="Account Number"></textarea></span>
+      </p>
       </div><!-- header -->
       <div class="griditem"><!-- intro css grid class  2 sidebar-->
         <div onclick="showhide('intro');">Introduction</div>
@@ -26,8 +28,8 @@
         <div onclick="showhide('ed-issues');">Educational issues</div>
       </div><!-- Ed Issues -->
       <div class="griditem"><!-- review css grid class  6 sidebar-->
-        <div onclick="showhide('review');">Review chat</div>
-      </div><!-- Review -->
+        <div onclick="showhide('tr');">Truck Rolls</div>
+      </div><!-- TR -->
       <div class="griditem"><!-- ending css grid class  7 sidebar-->
         <div onclick="showhide('ending');">Ending chat</div>
       </div><!-- Ending -->
@@ -37,8 +39,36 @@
       <div class="griditem"><!-- content css grid class  9 content-->
         <div id='contentwrap'>
           <div id='intro'>
-            <p>Hi, this is Tasha.</p>
-            <p>I understand that you are having an issue with        is that correct?</p>
+            <p>Pick an Intro Type:</p>
+            <div>
+              <input type="checkbox" id="reg">
+                <label for="reg">Regular</label>
+                  <div class="sub">
+                    <p>Hi, this is Tasha.<br>I understand that you are having issues with is this correct?</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" id="callme">
+                <label for="callme">Call Me</label>
+                  <div class="sub">
+                    <p>I would be happy to call you when I am available; however, it may take some time to be able to do so. If you don't want to wait or if you need immediate assistance please call 1-800-XFINITY. Otherwise I believe we can resolve this issue here in chat. Would this be okay?</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" id="tps">
+                <label for="tps">TPS</label>
+                  <div class="sub">
+                    <p>I understand you are an Xfinity Home TPS customer. I will be able to support some XFINITY Home questions, but may need to transfer you to the TPS support line depending on the issue. What is the issue that you are having today?</p>
+                    <br><p> Unfortunately, I am unable to further assist you today. I will have to connect you with the TPS Support team for further troubleshooting. I can either call you now and transfer you to our TPS Support line or, if you’d prefer, you can call the TPS support line directly at 1-888-586-2361. They're available 8 AM to 2 AM EST 7 days a week</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" id="spanish">
+                <label for="spanish">Spanish</label>
+                  <div class="sub">
+                   <p>We do not support Spanish on chat at this time. Please call 1-800-XFINITY to contact a Spanish speaking agent.<br>En estos momentos no tenemos agentes en Espanol en nuestro chat. Si desea communicarse con un agente en Espanol por favor llame al 1-800-XFINITY (1-800-934-6489).</p>
+              </div>
+            </div>
         </div><!-- first statement for intro-->
           <div id='verify'>
             <p>What is ES asking for?</p>
@@ -46,71 +76,579 @@
               <input type="checkbox" id="lastFour">
                 <label for="lastFour">Last Four SSN</label>
                   <div class="sub">
-                    <p>Thank you for confirming. In order to proceed, I will need to verfiy your account.</p>
-                    <p>Could you please provide the following:</p>
-                    <p> - Your First Name </p>
-                    <p> - The last four digits of your Social Security Number</p>
+                    <p>Thank you for confirming. In order to proceed, I will need to verfiy your account.
+                    <br>Could you please provide the following:
+                    <br> - Your First Name
+                    <br> - The last four digits of your Social Security Number</p>
               </div>
             </div>
             <div>
               <input type="checkbox" id="fullAccount">
                 <label for="fullAccount">Full Account Number</label>
                   <div class="sub">
-                    <p>Thank you for confirming. In order to proceed, I will need to verify your account information</p>
-                    <p>Could you please provide the following:</p>
-                    <p>- Your First name</p>
-                    <p>- The full account number</p>
+                    <p>Thank you for confirming. In order to proceed, I will need to verify your account information
+                    <br>Could you please provide the following:
+                    <br>- Your First name
+                    <br>- The full account number</p>
+                    <p>
                 </div>
               </div>
               <div>
               <input type="checkbox" id="paymentLastFour">
                 <label for="paymentLastFour">Last Four of Payment on File</label>
-                  <div class="sub">payment last four test</div>
+                  <div class="sub">
+                    <p>Thank you for confirming. In order to proceed, I will need to verify your account information
+                    <br>Could you please provide the following:
+                    <br>- Your First name
+                    <br>- The last four of the payment method saved on your account</p>
+                  </div>
               </div>
               <div>
               <input type="checkbox" id="iDontRecall">
                 <label for="iDontRecall">I dont recall this last one</label>
                   <div class="sub">I dont recall test</div>
               </div>
+              <p>Thank you for verifying that information. It will take me a few moments to load your account.</p>
           </div><!-- Verify -->
           <div id='eq-issues'>
             <p>What equipment type?</p>
-            <div>
+            <div><!--eq type-->
+              <input type="checkbox" id="Touchscreen">
+                <label for="Touchscreen">Touchscreen</label>
+                  <div class="sub">
+                    <div style="margin-left: 25px;"><!--sub level 2-->
+                      <input type="checkbox" id="rebootTS">
+                      <label for="rebootTS">Reboot the TS Through Settings</label>
+                        <div class="sub"><!--sub level 3-->
+                          <p> What you will need to do is the following:<br>
+                            - First make sure your system is disarmed.<br>
+                            - Press the three dots in the upper right corner.<br>
+                            - A menu will pop down. Please Select Settings.<br>
+                            - It will ask you for your Master Pin.<br>
+                            (Generally the same pin you use to arm and disarm the system)<br>
+                            - Scroll down the Categories screen to Advanced Settings.<br>
+                            - Scroll down to Reboot Touchscreen.<br>
+                            - Confirm you would like to reboot, and enter in Master Pin once more.</p>
+                          </div><!--sub level 3-->
+                        </div><!--sub level 2-->
+                    <div style="margin-left: 25px;"><!-- sub level 2-->
+                      <input type="checkbox" id="tsBBoffline">
+                        <label for="tsBBoffline">Touchscreen BBOffline</label>
+                          <div class="sub"><!-- sub level 3-->
+                          <p>The Touchscreen Controller relies on your home network Wifi to send and receive commands from the App and Subscriber Portal<br>
+                            If this connection is interrupted, your system will still work on a "local" level - meaning that you can arm and disarm from the Touchscreen Controller and Wireless Keypads, but not from the App or Subscriber Portal.<br>
+                            I can assure you that your system is still monitoring your devices even when the network issue occurs. The Touchscreen Controller has a backup cellular connection that it uses only to update the Central Monitoring Station in the case of alarm events.<br>
+                            To fix this issue, we will need to check your home networking equipment's connections, and reboot them if they are properly hooked up.<br>
+                            From what I can see of your equipment set up, your Touchscreen Controller is connected to your All-In-One Xfinity Wireless Gateway.<br>
+                            From what I can see of your equipment set up, your Touchscreen Controller is connected to your Netgear Security Router.</p>
+                      </div><!-- sub level 3-->
+                    </div><!-- sub level 2-->
+                    <div style="margin-left: 25px;"><!-- sub level 2-->
+                      <input type="checkbox" id="tsfrozen">
+                        <label for="tsfrozen">Touchscreen Frozen</label>
+                          <div class="sub"><!-- sub level 3-->
+                            <div><!--sub level 4-->
+                              <input type="checkbox" id="tsType">
+                              <label for="tsType">Touchscreen Type:</label>
+                              <div class="sub1"><!--new sub class for level 5-->
+                                <input type="checkbox" id="ts203">
+                                <label for="ts203">TS203 or Black</label>
+                                <div class="sub1"><!-- sub level 6-->
+                                <p>Pinhole Reset<br>
+                                  I will need to ask you to reboot the Touchscreen Controller manually. <br>
+                                  To reboot it manually you will need a Phillips head (cross) screwdriver and a small paperclip. The screwdriver will be used to take the stand off, while the paper clip will be used to press a button in a small hole.<br>
+                                  The stand has two small screws on the bottom back of the Touchscreen controller. If there aren't screws there, it will look like there is a hole with gold colored metal inside.<br>
+                                  Once the screws are out, press down on the top of the stand so that it slides, and then pull it off of the Touchscreen controller.<br>
+                                  The battery cover of the Touchscreen controller should now be visible. It looks like a big rectangle with stickers on the top, and a rounded right side.<br>
+                                  Near the top left of the battery cover, is a very small hole. This is where the reset button is housed.<br>
+                                  I'll need to ask you to be very carefull not to press red the panic button as you do this next step, as it may cause a false alarm.<br>
+                                  You will need to put one end of the paper clip into the hole, and press it down into the hole for about ten seconds, or until the screen turns on.<br>
+                                  Please let me know if it does not turn on after 1 minute.<br>
+                                  Good to hear! As long as you are careful not to press the red panic button, you can re-attach the stand to the Touchscreen Controller.  </p>
+                                </div>
+                            </div><!--sub level 5-->
+                            <div class="sub1"><!--new sub class for level 5-->
+                              <input type="checkbox" id="ts300">
+                              <label for="ts300">TS300 or white</label>
+                              <div class="sub1"><!-- sub level 6-->
+                              <p>Pinhole Reset<br>
+                                 Will need to find this info</p>
+                              </div><!-- sub level 6-->
+                          </div><!--sub level 5-->
+                        </div><!--sub level 4-->
+                      </div><!-- sub level 3-->
+                    </div><!-- sub level 2-->
+                  </div><!--sub level 1-->
+            </div><!--eq type-->
+            <div><!--eq type-->
               <input type="checkbox" id="camera">
                 <label for="camera">Camera</label>
                   <div class="sub">
-                    <p>If I may, I'll ask you to powercycle the camera</p>
-                    <p>This involves unplugging the camera for about twenty seconds, and then plugging it back in.</p>
-                    <p>This will reboot the camera</p>
-                    <p>Please let me know, once you've done this, what the lights on the camera or power brick are doing.</p>
+                    <div style="margin-left: 25px;"><!-- sub level 2-->
+                      <input type="checkbox" id="rebootCam">
+                        <label for="rebootCam">Reboot Camera</label>
+                          <div class="sub"><!-- sub level 3-->
+                          <p>If I may, I'll ask you to powercycle the camera. This involves unplugging the camera for about twenty seconds, and then plugging it back in. This will reboot the camera. Please let me know, once you've done this, what the lights on the camera or power brick are doing.<br>
+                            I will need to reboot your Modem. This reboot will take about three to five minutes, and will interrupt your Internet service while it is rebooting. Please let me know when it's okay to start that reboot.<br>
+                            Thanks, sending the reboot instruction now. I will let you know when the system confirms that the reboot is complete.<br>
+                            Next I will need to reboot your Touchscreen Controller. Before I do that, I will need you to make sure the system is disarmed, and to please let me know when it is so that I may start the reboot.<br>
+                            Thanks, sending the reboot instruction now. Please let me know when it begins to reboot, and when it gets back to it's normal home screen.</p>
+                      </div><!-- sub level 3-->
+                    </div><!-- sub level 2-->
+                    <div style="margin-left: 25px;"><!-- sub level 2-->
+                      <input type="checkbox" id="dsCam">
+                        <label for="dsCam">Camera in App</label>
+                          <div class="sub"><!-- sub level 3-->
+                          <p>If it helps, here is how to access the camera settings page in the app:<br>
+                          https://www.xfinity.com/support/home-security/rename-camera-home-app/<br>
+                          Although the article talks about renaming the camera, it will show you how to access it's device settings page.</p>
+                      </div><!-- sub level 3-->
+                    </div><!-- sub level 2-->
+                    <div style="margin-left: 25px;"><!-- sub level 2-->
+                      <input type="checkbox" id="wifiCam">
+                        <label for="wifiCam">Camera Connection Issues</label>
+                          <div class="sub"><!-- sub level 3-->
+                          <p>Your Camera uses WiFi to broadcast it's live feed to both the Touchscreen Controller and your App/Subscriber Portal.<br>
+                          Due to this, it will depend on the strength of your home network's WiFi signal.<br>
+                          WiFi strength depends on the distance of the two devices and any interference that may be present.<br>
+                          The distance you should keep your camera,(or Camera Power Brick if you have the xCam), from the Touchscreen Controller and your Modem or Router should be no more than 35 feet.<br>
+                         Interference can be caused by  thick surfaces (e.g., concrete floors and walls) and other household electronics that may cause interference with the WiFi signal, such as baby monitors, cordless phones, microwave ovens, refrigerators and Bluetooth-connected devices. Also, try to avoid crowded areas, such as inside or behind furniture, like an entertainment console.<br>
+                         What I would recommend is that you make sure that the Touchscreen Controller and the Modem or Router for your Internet connection both
+                         have an uninterrupted line of sight to your Camera (or Camera Power Brick, if you have the xCam.)<br>
+                         If there is interference, I will have to recommend that you move the modem and Touchscreen Controller closer to strengthen the WiFi signal for the camera.
+                         </p>
+                      </div><!-- sub level 3-->
+                    </div><!-- sub level 2-->
+                  </div><!--sub level 1-->
+            </div><!--eq type-->
+            <div>
+              <input type="checkbox" id="dwsnsr">
+                <label for="dwsnsr">Door-Window Sensors</label>
+                  <div class="sub">
+                    <div style="margin-left: 25px;">
+                      <input type="checkbox" id="tamper">
+                        <label for="tamper">Tamper Alert</label>
+                          <div class="sub">
+                          <p>A tamper alert message from a Door or Window Sensor means that the cover to the sensor is not on all the way. If I may, could you check the cover on the sensor?<P>
+                      </div>
+                    </div>
+                    <div style="margin-left: 25px;">
+                      <input type="checkbox" id="lowbat">
+                        <label for="lowbat">Low Battery Alert</label>
+                          <div class="sub">
+                          <p>A low battery alert from a Door or Window sensor means that the battery needs to be changed out. When you first get this message from the system, you have about two weeks to change the battery before it is completely depleted.<br>
+                          <p>Door Window Sensor Type:<br>
+                            <div>
+                              <input type="checkbox" id="UERs">
+                                <label for="UERs">XHS2-UE</label>
+                                  <div class="sub1">
+                                  <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                    https://www.xfinity.com/support/home-security/installing-battery-xhs2-ue-sensor/</p>
+                              </div>
+                            </div>
+                            <div>
+	                            <input type="checkbox" id="sercomSZ">
+	                            <label for="sercomSZ">Sercomm SZ-DWS04</label>
+		                            <div class="sub1">
+                                  <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                    https://www.xfinity.com/support/home-security/installing-battery-sz-dws04-sensor/</p>
+                                </div>
+                          </div>
+                          <div>
+                            <input type="checkbox" id="VisonicMCT-340">
+                            <label for="VisonicMCT-340">Visonic MCT-340</label>
+                              <div class="sub1">
+                                <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                  https://www.xfinity.com/support/home-security/installing-battery-mct-340-sma-sensor/</p>
+                              </div>
+                        </div>
+                        <div>
+                          <input type="checkbox" id="VisonicMCT-320">
+                          <label for="VisonicMCT-320">Visonic MCT-320</label>
+                            <div class="sub1">
+                              <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                https://www.xfinity.com/support/home-security/installing-battery-mct-320-sma-sensor/</p>
+                            </div>
+                      </div>
+                      <div>
+                        <input type="checkbox" id="SMCDW02-Z">
+                        <label for="SMCDW02-Z">SMCDW02-Z</label>
+                          <div class="sub1">
+                            <p>If it helps, here is a link to your device model's battery instructions:<br>
+                              https://www.xfinity.com/support/home-security/installing-battery-smcdw02-z-sensor/</p>
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <div><!-- container for device type -->
+	          <input type="checkbox" id="motsnsr">
+	          <label for="motsnsr">Motion Sensors</label>
+		          <div class="sub"><!--sub level 1-->
+			          <div style="margin-left: 25px;"><!-- indent sub level 2-->
+			          <input type="checkbox" id="motamper">
+			          <label for="motamper">Tamper Alert</label>
+				          <div class="sub"><!--sub level 3-->
+					          <p>A tamper alert message from a Motion Detecting Sensor means that the cover to the sensor is not on all the way. If I may, could you check the cover on the sensor?</p>
+				          </div><!--sub level 3-->
+			        </div><!-- indent sub level 2-->
+			    <div style="margin-left: 25px;"><!-- indent to level 2-->
+				    <input type="checkbox" id="molowbat">
+				    <label for="molowbat">Low Battery Alert</label>
+					  <div class="sub"><!--sub level 3-->
+						  <p>A low battery alert from a Motion Detecting sensor means that the battery needs to be changed out. When you first get this message from the system, you have about two weeks to change the battery before it is completely depleted.<br>
+						  <p>Motion Detector Sensor Type:<br>
+							  <div><!--sub level 4-->
+								  <input type="checkbox" id="XHS1-TY">
+								  <label for="XHS1-TY">XHS1-TY</label>
+									  <div class="sub1"><!--new sub class for level 5-->
+										  <p>If it helps, here is a link to your device model's battery instructions:<br>
+										  https://www.xfinity.com/support/home-security/installing-battery-xhs1-ty-motion-sensor/</p>
+  									</div><!--sub level 5-->
+  							</div><!--sub level 4-->
+                <div><!--sub level 4-->
+								  <input type="checkbox" id="VisonicNEXTK85">
+								  <label for="VisonicNEXTK85">Visonic NEXT K85</label>
+									  <div class="sub1"><!--new sub class for level 5-->
+										  <p>If it helps, here is a link to your device model's battery instructions:<br>
+										  https://www.xfinity.com/support/home-security/installing-battery-next-k85-sma-motion-sensor/</p>
+									  </div><!--sub level 5-->
+							  </div><!--sub level 4-->
+                <div><!--sub level 4-->
+								  <input type="checkbox" id="SMC">
+								  <label for="SMC">SMC</label>
+									  <div class="sub1"><!--new sub class for level 5-->
+										  <p>If it helps, here is a link to your device model's battery instructions:<br>
+										  https://www.xfinity.com/support/home-security/installing-battery-smcmt03-z-motion-sensor/</p>
+									  </div><!--sub level 5-->
+							  </div><!--sub level 4-->
+              <div><!--sub level 4-->
+								<input type="checkbox" id="VisonicTargeted">
+								<label for="VisonicTargeted">Visonic Targeted</label>
+									<div class="sub1"><!--new sub class for level 5-->
+										<p>If it helps, here is a link to your device model's battery instructions:<br>
+										https://www.xfinity.com/support/home-security/installing-battery-clip-sma-motion-sensor/</p>
+									</div><!--sub level 5-->
+							</div><!--sub level 4-->
+					</div><!--sub level 3-->
+			    </div><!-- indent sub level 2-->
+		    </div><!--sub level 1-->
+</div><!-- container for device type -->
+<div><!-- container for device type -->
+<input type="checkbox" id="thermostats">
+<label for="thermostats">Thermostats</label>
+  <div class="sub"><!--sub level 1-->
+    <div style="margin-left: 25px;"><!-- indent sub level 2-->
+    <input type="checkbox" id="thtamper">
+    <label for="thtamper">Tamper Alert</label>
+      <div class="sub"><!--sub level 3-->
+        <p>A tamper alert message from a Thermostat means that the cover to the sensor is not on all the way. If I may, could you check the cover on the sensor?</p>
+      </div><!--sub level 3-->
+  </div><!-- indent sub level 2-->
+<div style="margin-left: 25px;"><!-- indent to level 2-->
+<input type="checkbox" id="thlowbat">
+<label for="thlowbat">Low Battery Alert</label>
+<div class="sub"><!--sub level 3-->
+  <p>A low battery alert from a Thermostat means that the battery needs to be changed out. When you first get this message from the system, you have about two weeks to change the battery before it is completely depleted.<br>
+  <p>Thermostat Type:<br>
+    <div><!--sub level 4-->
+      <input type="checkbox" id="CentraLite">
+      <label for="CentraLite">CentraLite</label>
+        <div class="sub1"><!--new sub class for level 5-->
+          <p>If it helps, here is a link to your device model's battery instructions:<br>
+          https://www.xfinity.com/support/home-security/installing-batteries-3156105-thermostat/</p>
+        </div><!--sub level 5-->
+    </div><!--sub level 4-->
+    <div><!--sub level 4-->
+      <input type="checkbox" id="Homeworks">
+      <label for="Homeworks">Homeworks</label>
+        <div class="sub1"><!--new sub class for level 5-->
+          <p>If it helps, here is a link to your device model's battery instructions:<br>
+          https://www.xfinity.com/support/home-security/installing-batteries-ct30s-thermostat/</p>
+        </div><!--sub level 5-->
+    </div><!--sub level 4-->
+    <div><!--sub level 4-->
+      <input type="checkbox" id="Zen">
+      <label for="Zen">Zen</label>
+        <div class="sub1"><!--new sub class for level 5-->
+          <p>If it helps, here is a link to your device model's battery instructions:<br>
+          https://www.xfinity.com/support/home-security/installing-batteries-zen-01-w/</p>
+        </div><!--sub level 5-->
+    </div><!--sub level 4-->
+</div><!--sub level 3-->
+</div><!-- indent sub level 2-->
+</div><!--sub level 1-->
+</div><!-- container for device type -->
+<div><!-- container for device type -->
+<input type="checkbox" id="WirelessKeyPad">
+<label for="WirelessKeyPad">Wireless Key Pad</label>
+  <div class="sub"><!--sub level 1-->
+    <div style="margin-left: 25px;"><!-- indent sub level 2-->
+    <input type="checkbox" id="wktamper">
+    <label for="wktamper">Tamper Alert</label>
+      <div class="sub"><!--sub level 3-->
+        <p>A tamper alert message from a Wireless Keypad means that the cover to the sensor is not on all the way. If I may, could you check the cover on the sensor?</p>
+      </div><!--sub level 3-->
+  </div><!-- indent sub level 2-->
+<div style="margin-left: 25px;"><!-- indent to level 2-->
+<input type="checkbox" id="wklowbat">
+<label for="wklowbat">Low Battery Alert</label>
+<div class="sub"><!--sub level 3-->
+  <p>A low battery alert from a Wireless Keypad means that the battery needs to be changed out. When you first get this message from the system, you have about two weeks to change the battery before it is completely depleted.<br>
+  <p>Wireless Keypad Type:<br>
+    <div><!--sub level 4-->
+      <input type="checkbox" id="SMCSMCWK01-Z">
+      <label for="SMCSMCWK01-Z">SMC SMCWK01-Z</label>
+        <div class="sub1"><!--new sub class for level 5-->
+          <p>If it helps, here is a link to your device model's battery instructions:<br>
+          http://www.smc.com/video/keypadbattery/</p>
+        </div><!--sub level 5-->
+    </div><!--sub level 4-->
+    <div><!--sub level 4-->
+      <input type="checkbox" id="CentraLiteWirelessKeypad">
+      <label for="CentraLiteWirelessKeypad">CentraLite Wireless Keypad</label>
+        <div class="sub1"><!--new sub class for level 5-->
+          <p>If it helps, here is a link to your device model's battery instructions:<br>
+          https://www.xfinity.com/support/home-security/installing-battery-3400-keypad/</p>
+        </div><!--sub level 5-->
+    </div><!--sub level 4-->
+    <div><!--sub level 4-->
+      <input type="checkbox" id="UEIXHK1-UE">
+      <label for="UEIXHK1-UE">UEI XHK1-UE</label>
+        <div class="sub1"><!--new sub class for level 5-->
+          <p>If it helps, here is a link to your device model's battery instructions:<br>
+          https://www.xfinity.com/support/home-security/installing-batteries-xhk1-ue-keypad/</p>
+        </div><!--sub level 5-->
+    </div><!--sub level 4-->
+</div><!--sub level 3-->
+</div><!-- indent sub level 2-->
+</div><!--sub level 1-->
+</div><!-- container for device type -->
+<div><!-- container for device type -->
+<input type="checkbox" id="SmokeDetector">
+<label for="SmokeDetector">Smoke Detector</label>
+  <div class="sub"><!--sub level 1-->
+    <div style="margin-left: 25px;"><!-- indent sub level 2-->
+    <input type="checkbox" id="smktamper">
+    <label for="smktamper">Tamper Alert</label>
+      <div class="sub"><!--sub level 3-->
+        <p>A tamper alert message from a Smoke Detector means that the cover to the sensor is not on all the way. If I may, could you check the cover on the sensor?</p>
+      </div><!--sub level 3-->
+  </div><!-- indent sub level 2-->
+<div style="margin-left: 25px;"><!-- indent to level 2-->
+<input type="checkbox" id="smklowbat">
+<label for="smklowbat">Low Battery Alert</label>
+<div class="sub"><!--sub level 3-->
+  <p>A low battery alert from a Smoke Detector means that the battery needs to be changed out. When you first get this message from the system, you have about two weeks to change the battery before it is completely depleted.<br>
+  <p>Smoke Detector Type:<br>
+    <div><!--sub level 4-->
+      <input type="checkbox" id="VisonicMCT-427SMA">
+      <label for="VisonicMCT-427SMA">Visonic MCT-427 SMA</label>
+        <div class="sub1"><!--new sub class for level 5-->
+          <p>If it helps, here is a link to your device model's battery instructions:<br>
+          https://www.xfinity.com/support/home-security/installing-battery-mct-427-sma-smoke-detector/</p>
+        </div><!--sub level 5-->
+    </div><!--sub level 4-->
+    <div><!--sub level 4-->
+      <input type="checkbox" id="SMCSMCSM02-Z">
+      <label for="SMCSMCSM02-Z">SMC SMCSM02-Z</label>
+        <div class="sub1"><!--new sub class for level 5-->
+          <p>If it helps, here is a link to your device model's battery instructions:<br>
+          https://www.xfinity.com/support/home-security/installing-battery-smcsm02-z-smoke-detector/</p>
+        </div><!--sub level 5-->
+    </div><!--sub level 4-->
+</div><!--sub level 3-->
+</div><!-- indent sub level 2-->
+</div><!--sub level 1-->
+</div><!-- container for device type -->
+          </div>
+          <div id='ed-issues'>Educational Issues:<br>
+            <div><!-- container for info -->
+            <input type="checkbox" id="centralmon">
+            <label for="centralmon">Central Monitoring Station #</label>
+              <div class="sub"><!--sub level 1-->
+                <p>COPS:800-455-1207</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="keypadCodes">
+            <label for="keypadCodes">Change Keypad Codes</label>
+              <div class="sub"><!--sub level 1-->
+                <p>From the Touchscreen, what you will need to do is the following:<br>
+                  - Press the three dots in the upper right corner.<br>
+                  - A menu will pop down. Please Select Settings.<br>
+                  - It will ask you for your Master Pin.<br>
+                    (Generally the same pin you use to arm and disarm the system)<br>
+                  - On the Categories screen, tap Security<br>
+                  - On the Security screen, tap Manage Keypad Codes<br>
+                  - Tap Edit next to the code you want to change<br>
+                  - If you want to change the access level (Standard, Guest, Arm Only) for a Secondary Keypad Code, you'll need to delete the code and create a new one with the access level that you want.<br>
+                  - The Master Keypad Code is always active. You cannot change the Active Days for this code.<br>
+                  - Click Save</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="chimeVol">
+            <label for="chimeVol">Volume issues on Touchscreen</label>
+              <div class="sub"><!--sub level 1-->
+                <p>There is a button on the side of the Touchscreen Controller that will raise or lower the volume. If I may, please try this button and let me know what happens.</p>
+                <p>I will have to suggest that you set the volume from the settings menu if you are unable to adjust it using the button on the side.</p>
+                <p>To do this, you will need to press the three dots in the upper right corner, and select Settings.<br>
+                It will ask you for your Master Code, which is generally the same one you use to arm and disarm your system.<br>
+                Once that is entered, you will see a page titled Categories. From here, select Touchscreen Configuration.<br>
+                On the next page, select Sound Configuration.<br>
+                On the resulting page, select Volume Configuration.<br>
+                To return to the regular home screen, make sure to press done or save, and then press the house button.<br>
+                If it helps, here is an article that details how to change the volume on the Touchscreen Controller:<br>
+                https://www.xfinity.com/support/home-security/change-sound-settings-for-touchscreen/</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="bypass">
+            <label for="bypass">Bypass Sensors</label>
+              <div class="sub"><!--sub level 1-->
+                <p>The bypass setting will allow you to arm your system if the device has encountered an issue that would normally prevent you from arming. However, once you disarm the system, the bypass setting is defaulted back to the "on" state. This means that you will need to bypass this sensor every time before you arm the system, or until the issue with that sensor is resolved. </p>
+                <p>Bypass on App: From the Overview screen (the first one that shows when you launch the app), scroll down to the device that you would like to bypass. Press the three dots in the upper right of that device, which will take you to it's settings page. From there you should see an option for device on or off. Toggle the device off, and then go back to the overview screen to arm the system. If it helps, here is a link that details how to access the device settings screen and where to find the on/off toggle: <br>
+                https://www.xfinity.com/support/home-security/getting-started-xh-mobile-app-secure/#zones</p>
               </div>
             </div>
           </div>
-          <div id='ed-issues'>ed issues test</div>
-          <div id='review'>review test</div>
-          <div id='ending'>ending test</div>
-          <div id='notes'>notes test</div>
+          <div id='tr'>Truck Roll
+            <div><!-- container for info -->
+            <input type="checkbox" id="rectr">
+            <label for="rectr">Recommend TR</label>
+              <div class="sub"><!--sub level 1-->
+                <p>To better assist you with this issue, I may have to reccomend that we schedule for a technician's visit. Would this be okay?</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="aFee">
+            <label for="aFee">Why the charge?</label>
+              <div class="sub"><!--sub level 1-->
+                <p>There is always the possibility of charges when it comes to a technician's visit. Unfortunately I am not able to give you an estimate or exact quote as to what those charges are, considering they are assessed by the Technician who performs the service visit.</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="num4tech">
+            <label for="num4tech">Best # For Tech to Call</label>
+              <div class="sub"><!--sub level 1-->
+              <p>What would be the best phone number to contact you at, in case the technician needs to speak with you about this visit?</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="discotr">
+            <label for="discotr">Truck Roll Disclosures</label>
+              <div class="sub"><!--sub level 1-->
+              <p>While I pull up the list of available appointments, here are a few things you need to be aware of regarding your visit:</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="manapp">
+            <label for="manapp">Link to manage appt online</label>
+              <div class="sub"><!--sub level 1-->
+              <p>If it helps, here is a link that will detail how you can manage this appointment:<br>
+              https://www.xfinity.com/support/account/customerservice/?collectionId=dc389984-5a08-4ef2-aa72-c39b1f73118c-2</p>
+              </div>
+            </div>
+          </div>
+          <div id='ending'>Would there happen to be anything else that I could assist with today?
+            <div><!-- container for info -->
+            <input type="checkbox" id="okend">
+            <label for="okend">Normal Ending</label>
+              <div class="sub"><!--sub level 1-->
+              <p>Okay, we're just about done here. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+              </div>
+            </div>
+          <div><!-- container for info -->
+          <input type="checkbox" id="noresp">
+          <label for="noresp">No Response Ending</label>
+            <div class="sub"><!--sub level 1-->
+            <p>Okay, if there is nothing else, we're just about done here. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+            </div>
+          </div>
+          <div><!-- container for info -->
+          <input type="checkbox" id="uwelcome">
+          <label for="uwelcome">You're welcome! Ending</label>
+            <div class="sub"><!--sub level 1-->
+            <p>You're welcome! We're just about done here. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+            </div>
+          </div>
+          <div><!-- container for info -->
+          <input type="checkbox" id="leaveOpen">
+          <label for="leaveOpen">Leave the Chat Open</label>
+            <div class="sub"><!--sub level 1-->
+            <p>Okay. We'll leave this chat open if you need to return for further assistance. You will see two messages ask if you are still available to chat. You can ignore these messages until you come back to the chat.</p>
+            </div>
+          </div>
+          <div><!-- container for info -->
+          <input type="checkbox" id="adSup">
+          <label for="adSup">Mobile App/24-7 Advanced Support</label>
+            <div class="sub"><!--sub level 1-->
+            <p>I have created a ticket for our Advanced Support agent to call you at ____ within 5 business days between the hours of 9AM to 9PM. If for some reason, we miss reaching you at that time, you can call our Advanced Support team anytime at 1-800-934-6489</p>
+            </div>
+          </div>
+          <div><!-- container for info -->
+          <input type="checkbox" id="pastHours">
+          <label for="pastHours">After Operating Hours</label>
+            <div class="sub"><!--sub level 1-->
+            <p>Thanks for contacting us! Our chat hours are 7am – 11pm EDT. We will be here to support you if you can chat with us again tomorrow. If you need help in the meantime, please call us at 1-800-XFINITY.</p>
+            </div>
+          </div>
+          <div><!-- container for info -->
+          <input type="checkbox" id="recap">
+          <label for="recap">Recap the chat</label>
+            <div class="sub"><!--sub level 1-->
+            <p>To recap - You've encountered an issue with ___</p>
+            </div>
+          </div>
+          <div><!-- container for info -->
+          <input type="checkbox" id="surveyAsk">
+          <label for="surveyAsk">Ask for survey</label>
+            <div class="sub"><!--sub level 1-->
+            <p>Once our chat ends, you'll be prompted for a short survey on the service you received today. I appreciate any feedback you provide so I can be sure I'm providing the best service possible.</p>
+            </div>
+          </div>
+          <div><!-- container for info -->
+          <input type="checkbox" id="ResolveMessage">
+          <label for="ResolveMessage">Last Message - Resolve</label>
+            <div class="sub"><!--sub level 1-->
+            <p>If you have any other issues or questions, feel free to reach us via chat, call us at 1-800-XFINITY for 24/7 assistance or you can visit our help site at https://www.xfinity.com/support/ Hope you have a great day!</p>
+            </div>
+          </div>
+        </div>
+          <div id='notes'>
+          <p>XHS MOBILE CHAT SUPPORT<br>
+            NCOE-SDC-BP-TGILL003<br>
+            Chat Ticket:<span id="chattic"> </span><br>
+            ITG Ticket:<span id="estic"> </span><br>
+            ERONE Ticket:<span id="ertic"> </span><p>
+          </div>
         </div><!--content wrap -->
       </div><!-- content -->
       <div class="griditem"><!-- footer css grid class  10 footer-->
-        <span>Footer</span><!-- inline element for now -->
+        <span>This is a personal tool for work. Please do not distribute to anyone without my permission - Tasha</span><!-- inline element for now -->
       </div><!-- footer -->
       <div class="griditem"><!-- copypad css grid class 11 copypad-->
-        <textarea name="copypad" id="copypad" cols="15" rows="7" placeholder="copy & paste here!"></textarea>
+        <textarea name="copypad" id="copypad" style="width: 100%" cols="auto" rows="7" placeholder="copy/paste here"></textarea>
         <!-- copy paste area just in case -->
       </div><!-- copy pad -->
-      <div class="griditem"><!-- timer css grid class 12 timer-->
-        <span>text boxes for form to enter ticket and chat number</span>
+      <div class="griditem"><!-- timer css grid class 12 tickets-->
+        <span><textarea name="chatticket" style="width: 100%" cols="auto" rows="1" placeholder="Chat Ticket" onkeyup="updateTicket()"></textarea></span><br>
+        <span><textarea name="esticket" style="width: 100%" cols="auto" rows="1" placeholder="ES Ticket" onkeyup="updateTicket()"></textarea></span><br>
+        <span><textarea name="erone" style="width: 100%" cols="auto" rows="1" placeholder="ERONE" onkeyup="updateTicket()"></textarea></span>
       </div><!-- simple timer-->
     </div><!--end grid class -->
 
 <!--Where you left off:
-- change review to TR - can already review in ending.
 - Filling in the information for each menu type in the contentwrap view
 - copy text javascript buttons
-- create text boxes for the ticket numbers that send text to note format
 - reset all button to start over for new chat
 - Style based on material stuffs. Gotta look into it.
+- Next big project step will be converting this all to a javascript format, where all the values update due to actions,
+- so I dont have to mess with all the divs within divs. I hope to keep the html file clean, while keeping all
+- of the information locked into variables. This will also give me the ability to eventually make this available to
+- other agents, as they can enter in their own information.
 -->
 </div>
 </body>
