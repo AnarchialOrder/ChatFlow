@@ -9,7 +9,7 @@
    <script src="chatflow.js"></script>
 </head>
 <body>
-    <div class="grid-wrapper"><!-- css grid class -->
+    <div class="grid-wrapper" style="background:url(Autumn.jpg);background-position:center;opacity.45;"><!-- css grid class -->
       <div class="griditem"><!-- header css grid class 1 header-->
         <p>Chat Flow
         <span style="float: right;"><textarea id="account" cols="auto" rows="1" placeholder="Account Number"></textarea></span>
@@ -116,6 +116,14 @@
               <input type="checkbox" id="Touchscreen">
                 <label for="Touchscreen">Touchscreen</label>
                   <div class="sub">
+                    <div style="margin-left: 25px;"><!--sub level 2-->
+                      <input type="checkbox" id="GeneralLink">
+                      <label for="GeneralLink">General Link</label>
+                      <div class="sub"><!-- sub level 3-->
+                        <p>If it helps, here is a link that has articles regarding the Touchscreen Controller, and how you can use it to control your system:<br>
+                          https://www.xfinity.com/support/home-security/?collectionId=afec3d0e-1af4-4c47-b1d5-7dc41bd25d37-6</p>
+                          </div><!-- sub level 3-->
+                        </div><!--sub level 2-->
                     <div style="margin-left: 25px;"><!--sub level 2-->
                       <input type="checkbox" id="rebootTS">
                       <label for="rebootTS">Reboot the TS Through Settings</label>
@@ -465,6 +473,13 @@
           </div>
           <div id='ed-issues'>Educational Issues:<br>
             <div><!-- container for info -->
+            <input type="checkbox" id="armDis">
+            <label for="armDis">Arming and Disarming</label>
+              <div class="sub"><!--sub level 1-->
+                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
             <input type="checkbox" id="centralmon">
             <label for="centralmon">Central Monitoring Station #</label>
               <div class="sub"><!--sub level 1-->
@@ -511,6 +526,48 @@
                 <p>The bypass setting will allow you to arm your system if the device has encountered an issue that would normally prevent you from arming. However, once you disarm the system, the bypass setting is defaulted back to the "on" state. This means that you will need to bypass this sensor every time before you arm the system, or until the issue with that sensor is resolved. </p>
                 <p>Bypass on App: From the Overview screen (the first one that shows when you launch the app), scroll down to the device that you would like to bypass. Press the three dots in the upper right of that device, which will take you to it's settings page. From there you should see an option for device on or off. Toggle the device off, and then go back to the overview screen to arm the system. If it helps, here is a link that details how to access the device settings screen and where to find the on/off toggle: <br>
                 https://www.xfinity.com/support/home-security/getting-started-xh-mobile-app-secure/#zones</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="247v">
+            <label for="247v">24-7 Video Recording</label>
+              <div class="sub"><!--sub level 1-->
+                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="rules">
+            <label for="rules">Rules - All</label>
+              <div class="sub"><!--sub level 1-->
+                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="wwhxs">
+            <label for="wwxhs">Works With XHS</label>
+              <div class="sub"><!--sub level 1-->
+                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="addeq">
+            <label for="addeq">Additional Equipment</label>
+              <div class="sub"><!--sub level 1-->
+                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="missdir">
+            <label for="missdir">Misdirected Chats</label>
+              <div class="sub"><!--sub level 1-->
+                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+              </div>
+            </div>
+            <div><!-- container for info -->
+            <input type="checkbox" id="phoneCall">
+            <label for="phoneCall">Phone Call</label>
+              <div class="sub"><!--sub level 1-->
+                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
               </div>
             </div>
           </div>
@@ -630,7 +687,7 @@
         <span>This is a personal tool for work. Please do not distribute to anyone without my permission - Tasha</span><!-- inline element for now -->
       </div><!-- footer -->
       <div class="griditem"><!-- copypad css grid class 11 copypad-->
-        <textarea name="copypad" id="copypad" style="width: 100%" cols="auto" rows="7" placeholder="copy/paste here"></textarea>
+        <textarea name="copypad" id="copypad" style="overflow-y: auto; overflow-x: auto;" cols="auto" rows="auto" placeholder="To review... Copy Paste Here, Not a Form."></textarea>
         <!-- copy paste area just in case -->
       </div><!-- copy pad -->
       <div class="griditem"><!-- timer css grid class 12 tickets-->
