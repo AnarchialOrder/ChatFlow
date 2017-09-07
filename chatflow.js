@@ -43,5 +43,5 @@ function chatTab(){
   document.title = chatTabInput;
 
 }
-
+updateTicket();
 chatTab();
