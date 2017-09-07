@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="chatflow.css">
-  <title>Chat Flow</title>
+  <title contenteditable="true">Chat Flow</title>
    <script src="chatflow.js"></script>
 </head>
 <body>
-    <div class="grid-wrapper" style="background:url(Autumn.jpg);background-position:center;opacity.45;"><!-- css grid class -->
+    <div class="grid-wrapper" style="background:url(water.jpg); background-size: cover;background-attachment: fixed;background-position:center bottom; background-repeat: no-repeat;opacity.75;"><!-- css grid class -->
       <div class="griditem"><!-- header css grid class 1 header-->
-        <p>Chat Flow
-        <span style="float: right;"><textarea id="account" cols="auto" rows="1" placeholder="Account Number"></textarea></span>
-      </p>
-      </div><!-- header -->
+		<span id="logo" style="height: 50px; width: 55px; line-height: 23px; display: inline-block;">Chat Flow</span>
+        <span style="margin-left: 10px;"><textarea name="myName" style="margin-left: 12%;" cols="20" rows="1" placeholder="My Name" onkeyup="updateTicket()">Tasha</textarea></span>
+		<span style="margin-left: 10px;"><textarea name="myBPID" cols="20" rows="1" placeholder="My BP ID" onkeyup="updateTicket()">TGILL003</textarea></span>
+		<span style="margin-left: 10px;"><textarea maxlength="100" id="chatTitle" name="chatTitle" cols="120" rows="1" onkeyup="chatTab()" placeholder="Chat Title"></textarea></span>
+        <span style="margin-left: 20px; margin-right: 10px;"><textarea name="account" cols="35" rows="1" placeholder="Account Number"></textarea></span>
+       </div><!-- header -->
       <div class="griditem"><!-- intro css grid class  2 sidebar-->
         <div onclick="showhide('intro');">Introduction</div>
       </div><!-- intro -->
@@ -44,14 +46,15 @@
               <input type="checkbox" id="reg">
                 <label for="reg">Regular</label>
                   <div class="sub">
-                    <p>Hi, this is Tasha.<br>I understand that you are having issues with is this correct?</p>
+                    <p>Hi, this is <span id="myNamePut"></span>.<br><br>I understand that you are having issues with is this correct?<br><br>
+					One moment as I review the previous chat.</p>
               </div>
             </div>
             <div>
               <input type="checkbox" id="callme">
                 <label for="callme">Call Me</label>
                   <div class="sub">
-                    <p>I would be happy to call you when I am available; however, it may take some time to be able to do so. If you don't want to wait or if you need immediate assistance please call 1-800-XFINITY. Otherwise I believe we can resolve this issue here in chat. Would this be okay?</p>
+                    <p>I would be happy to call you when I am available; however, it may take some time to be able to do so. If you don't want to wait or if you need immediate assistance please call 1-800-XFINITY. <br><br>Otherwise I believe we can resolve this issue here in chat. Would this be okay?</p>
               </div>
             </div>
             <div>
@@ -89,7 +92,8 @@
                     <p>Thank you for confirming. In order to proceed, I will need to verify your account information
                     <br>Could you please provide the following:
                     <br>- Your First name
-                    <br>- The full account number</p>
+                    <br>- The full account number
+					<br><br>If you don't have the account number handy, you can download and install the 'Xfinity my account app' onto your phone. This link has instructions on how to recover the account number: https://www.xfinity.com/support/xfinity-apps/view-account-info-my-account-app/</p>
                     <p>
                 </div>
               </div>
@@ -108,7 +112,9 @@
                 <label for="iDontRecall">I dont recall this last one</label>
                   <div class="sub">I dont recall test</div>
               </div>
-              <p>Thank you for verifying that information. It will take me a few moments to load your account.</p>
+              <p>Thank you for verifying that information. It will take me a few moments to load your account.<br><br>
+					Thanks for your patience. I am running a few automated checks on your system now.<br><br>
+					If I may, would you happen to be at the home right now?</p>
           </div><!-- Verify -->
           <div id='eq-issues'>
             <p>What equipment type?</p>
@@ -122,6 +128,14 @@
                       <div class="sub"><!-- sub level 3-->
                         <p>If it helps, here is a link that has articles regarding the Touchscreen Controller, and how you can use it to control your system:<br>
                           https://www.xfinity.com/support/home-security/?collectionId=afec3d0e-1af4-4c47-b1d5-7dc41bd25d37-6</p>
+                          </div><!-- sub level 3-->
+                        </div><!--sub level 2-->
+						<div style="margin-left: 25px;"><!--sub level 2-->
+                      <input type="checkbox" id="remoteReboot">
+                      <label for="remoteReboot">Reboot the TS through ES360</label>
+                      <div class="sub"><!-- sub level 3-->
+                        <p>Thanks. First I will need to reboot your Touchscreen Controller for some diagnostic information. In order to do that, your system should be disarmed. If I may, please let me know when the system is disarmed, so that I can start that reboot.<br><br>
+						Thanks, sending the reboot instruction now. Please let me know when it begins to reboot, and when it gets back to it's normal home screen.</p>
                           </div><!-- sub level 3-->
                         </div><!--sub level 2-->
                     <div style="margin-left: 25px;"><!--sub level 2-->
@@ -144,11 +158,12 @@
                         <label for="tsBBoffline">Touchscreen BBOffline</label>
                           <div class="sub"><!-- sub level 3-->
                           <p>The Touchscreen Controller relies on your home network Wifi to send and receive commands from the App and Subscriber Portal<br>
-                            If this connection is interrupted, your system will still work on a "local" level - meaning that you can arm and disarm from the Touchscreen Controller and Wireless Keypads, but not from the App or Subscriber Portal.<br>
-                            I can assure you that your system is still monitoring your devices even when the network issue occurs. The Touchscreen Controller has a backup cellular connection that it uses only to update the Central Monitoring Station in the case of alarm events.<br>
-                            To fix this issue, we will need to check your home networking equipment's connections, and reboot them if they are properly hooked up.<br>
-                            From what I can see of your equipment set up, your Touchscreen Controller is connected to your All-In-One Xfinity Wireless Gateway.<br>
-                            From what I can see of your equipment set up, your Touchscreen Controller is connected to your Netgear Security Router.</p>
+                            If this connection is interrupted, your system will still work on a "local" level - meaning that you can arm and disarm from the Touchscreen Controller and Wireless Keypads, but not from the App or Subscriber Portal.<br><br>
+							I can assure you that your system is still monitoring your devices even when the network issue occurs. The Touchscreen Controller has a backup cellular connection that it uses only to update the Central Monitoring Station in the case of alarm events.<br><br>
+                            To fix this issue, we will need to check your home networking equipment's connections, and reboot them if they are properly hooked up.<br><br>
+                            From what I can see of your equipment set up, your Touchscreen Controller is connected to your All-In-One Xfinity Wireless Gateway.<br><br>
+                            From what I can see of your equipment set up, your Touchscreen Controller is connected to your Netgear Security Router.<br><br>
+							I will need to reboot your Modem. This reboot will take about three to five minutes. This will interrupt your Internet service and may prevent you from controlling the system from the app temporarily, while it is rebooting. Please let me know when it's okay to start that reboot.</p>
                       </div><!-- sub level 3-->
                     </div><!-- sub level 2-->
                     <div style="margin-left: 25px;"><!-- sub level 2-->
@@ -179,8 +194,13 @@
                               <input type="checkbox" id="ts300">
                               <label for="ts300">TS300 or white</label>
                               <div class="sub1"><!-- sub level 6-->
-                              <p>Pinhole Reset<br>
-                                 Will need to find this info</p>
+                              <p>Pinhole Reset<br><br>
+                                 To remove the battery cover from the back of the Touchscreen Controller, insert your finger into circular hole and pull down.<br><br>
+
+								Remove the back plate from the back of the Touchscreen by pulling the center of the bottom edge upward, then sliding the top tabs out of the slots.<br><br>
+								Feed the AC power cable through the circular hole on the back plate and connect to the power port on the back of the Touchscreen.<br><br>
+								Snap the back plate to the back of the Touchscreen by inserting the top tabs into the slots first, then pressing the bottom into place. Ensure all slack from the AC power cable is pulled through the back plate.<br><br>
+								Connect the stand to the back of the Touchscreen.</p>
                               </div><!-- sub level 6-->
                           </div><!--sub level 5-->
                         </div><!--sub level 4-->
@@ -196,10 +216,10 @@
                       <input type="checkbox" id="rebootCam">
                         <label for="rebootCam">Reboot Camera</label>
                           <div class="sub"><!-- sub level 3-->
-                          <p>If I may, I'll ask you to powercycle the camera. This involves unplugging the camera for about twenty seconds, and then plugging it back in. This will reboot the camera. Please let me know, once you've done this, what the lights on the camera or power brick are doing.<br>
-                            I will need to reboot your Modem. This reboot will take about three to five minutes, and will interrupt your Internet service while it is rebooting. Please let me know when it's okay to start that reboot.<br>
-                            Thanks, sending the reboot instruction now. I will let you know when the system confirms that the reboot is complete.<br>
-                            Next I will need to reboot your Touchscreen Controller. Before I do that, I will need you to make sure the system is disarmed, and to please let me know when it is so that I may start the reboot.<br>
+                          <p>If I may, I'll ask you to powercycle the camera. This involves unplugging the camera for about twenty seconds, and then plugging it back in. This will reboot the camera. Please let me know, once you've done this, what the lights on the camera or power brick are doing.<br><br>
+                            I will need to reboot your Modem. This reboot will take about three to five minutes. This will interrupt your Internet service and may prevent you from controlling the system from the app temporarily, while it is rebooting. Please let me know when it's okay to start that reboot.<br><br>
+                            Thanks, sending the reboot instruction now. I will let you know when the system confirms that the reboot is complete.<br><br>
+                            Thanks. First I will need to reboot your Touchscreen Controller for some diagnostic information. In order to do that, your system should be disarmed. If I may, please let me know when the system is disarmed, so that I can start that reboot.<br><br>
                             Thanks, sending the reboot instruction now. Please let me know when it begins to reboot, and when it gets back to it's normal home screen.</p>
                       </div><!-- sub level 3-->
                     </div><!-- sub level 2-->
@@ -220,15 +240,26 @@
                           Due to this, it will depend on the strength of your home network's WiFi signal.<br>
                           WiFi strength depends on the distance of the two devices and any interference that may be present.<br>
                           The distance you should keep your camera,(or Camera Power Brick if you have the xCam), from the Touchscreen Controller and your Modem or Router should be no more than 35 feet.<br>
-                         Interference can be caused by  thick surfaces (e.g., concrete floors and walls) and other household electronics that may cause interference with the WiFi signal, such as baby monitors, cordless phones, microwave ovens, refrigerators and Bluetooth-connected devices. Also, try to avoid crowded areas, such as inside or behind furniture, like an entertainment console.<br>
+                         Interference can be caused by  thick surfaces (e.g., concrete floors and walls) and other household electronics, such as baby monitors, cordless phones, microwave ovens, refrigerators and Bluetooth-connected devices. Also, try to avoid crowded areas, such as inside or behind furniture, like an entertainment console.<br>
                          What I would recommend is that you make sure that the Touchscreen Controller and the Modem or Router for your Internet connection both
                          have an uninterrupted line of sight to your Camera (or Camera Power Brick, if you have the xCam.)<br>
-                         If there is interference, I will have to recommend that you move the modem and Touchscreen Controller closer to strengthen the WiFi signal for the camera.
+                         If there is interference, I will have to recommend that you move the modem and Touchscreen Controller closer to strengthen the WiFi signal for the camera.<br><br>If it helps, here is an article that details how to improve your wifi. The principles outlined there apply to your Secure devices as well:
+							https://www.xfinity.com/support/internet/improve-your-wireless-home-network/
                          </p>
                       </div><!-- sub level 3-->
                     </div><!-- sub level 2-->
                   </div><!--sub level 1-->
             </div><!--eq type-->
+			<div>
+			<input type="checkbox" id="sencomm">
+            <label for="sencomm">Sensor Communication Failure</label>
+				<div class="sub">
+                    <p>If I may, have you had to change out the batteries in the sensor recently?<br><br>
+					If I may, I will ask you to reboot the sensor by taking the battery out for about twenty seconds, and then placing it back in.<br><br>
+					If I may, when you put the battery back in, was the light in the battery compartment solid or flashing?<br><br>
+					Thanks for confirming. This may indicate that it has lost it's connection to the system. We may need to schedule for a technician's visit to resolve this issue, would this be okay?<P>
+                </div>
+			</div>
             <div>
               <input type="checkbox" id="dwsnsr">
                 <label for="dwsnsr">Door-Window Sensors</label>
@@ -476,14 +507,64 @@
             <input type="checkbox" id="armDis">
             <label for="armDis">Arming and Disarming</label>
               <div class="sub"><!--sub level 1-->
-                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+                <p>
+You can arm your XFINITY Home - Secure system in three modes: Arm Away, Arm Stay, and Arm Night.<br><br>
+
+Arm Away gives you time to leave the house (Exit Delay) and then activates your system, including the Motion Sensors. When you come home, you have time to disarm the system (Entry Delay) so you don't trigger an alarm. If you activate Arm Away and no one leaves the house using a monitored door, the system automatically switches to Arm Stay mode.<br><br>
+
+Arm Stay is for when you are at home and awake. Security features are activated as in Arm Away, but Motion Sensors are not (so you don't trip the alarm while you're in the house).<br><br>
+
+Arm Night is for when you go to sleep. The system is activated as in Arm Away and Arm Stay, but with no Entry Delay when you disarm the system. Motion Sensors can be activated with or without an Exit Delay, depending on your setup. Typically, Motion Sensors are activated immediately in areas where you are not going to be, while Motion Sensors are delayed in places you'll pass through on your way to your bedroom.<br><br><br>
+
+EXIT DELAYS:<br><br>
+
+ARM AWAY: If you open and shut an Entry/Exit door during the Exit Delay and then re-enter the house, the Exit Delay restarts at 120 seconds. It will only do this one time.
+If an Entry/Exit door is left open at the end of Exit Delay, the Entry Delay immediately starts and, if the system is not disarmed, an alarm will sound.<br><br>
+
+ARM STAY: If you open and shut an Entry or Exit door during the Exit Delay and then re-enter the premises, the Exit Delay restarts. It will only do this one time.
+If an Entry or Exit door is left open at the end of Exit Delay, the Entry Delay immediately starts and, if the system is not disarmed, an alarm will sound.<br><br>
+
+If you shut an Entry or Exit door during the Exit Delay and then re-enter the premises, the Exit Delay restarts. It will only do this one time.<br><br>
+There is no entry delay for the Arm Night mode, the system will sound the siren. <br><br><br>
+
+HOW TO ARM:<br>
+Wireless Keypads<br><br>
+=================<br><br>
+
+Press the Arm state you want the system in, and then your four digit pin. <br><br><br>
+
+Disarm System<br><br>
+==============<br><br>
+Open an Entry/Exit door.<br>
+Listen for a tone indicating that the Entry Delay has started.<br>
+Enter your Master Keypad Code or Secondary Keypad Code before the Entry Delay period ends.<br><br>
+
+SMC is the only one where you enter in the code first, and then the arm state.<br><br><br>
+
+
+Check System Status<br><br>
+
+The Status LED at the bottom of the Keypad indicates the status of the security system by color:<br>
+Green - Ready/Not Armed<br>
+Red - Armed<br>
+Amber - Not Ready<br><br><br>
+
+
+ARM/DISARM FROM THE TOUCHSCREEN CONTROLLER:<br>
+Tap the Security shield.<br>
+On the Select Arm State screen, Away mode is already selected. To activate another mode, tap the icon for Stay or Night.<br>
+Enter your keypad code. The Exit Delay begins.<br>
+You have until the Exit Delay is over to exit the building. An entry/exit door must open and close during this period.<br>
+Change Your Mind? To cancel arming, tap Cancel, and then enter your keypad code.<br>
+Enter your keypad code before the Entry Delay ends. The system is disarmed.<p>
               </div>
             </div>
             <div><!-- container for info -->
             <input type="checkbox" id="centralmon">
             <label for="centralmon">Central Monitoring Station #</label>
               <div class="sub"><!--sub level 1-->
-                <p>COPS:800-455-1207</p>
+                <p>For general inquires, please call: 1-800-FORCOPS (367-2677)<br><br>
+				To speak directly with a Central Monitoring Station Agent, please call: 1-800-633-2677</p>
               </div>
             </div>
             <div><!-- container for info -->
@@ -507,16 +588,19 @@
             <input type="checkbox" id="chimeVol">
             <label for="chimeVol">Volume issues on Touchscreen</label>
               <div class="sub"><!--sub level 1-->
-                <p>There is a button on the side of the Touchscreen Controller that will raise or lower the volume. If I may, please try this button and let me know what happens.</p>
-                <p>I will have to suggest that you set the volume from the settings menu if you are unable to adjust it using the button on the side.</p>
-                <p>To do this, you will need to press the three dots in the upper right corner, and select Settings.<br>
-                It will ask you for your Master Code, which is generally the same one you use to arm and disarm your system.<br>
-                Once that is entered, you will see a page titled Categories. From here, select Touchscreen Configuration.<br>
-                On the next page, select Sound Configuration.<br>
-                On the resulting page, select Volume Configuration.<br>
-                To return to the regular home screen, make sure to press done or save, and then press the house button.<br>
-                If it helps, here is an article that details how to change the volume on the Touchscreen Controller:<br>
-                https://www.xfinity.com/support/home-security/change-sound-settings-for-touchscreen/</p>
+                <p>Thank you for confirming. There was an update that went out recently to bring the Touchscreen Controller sounds in line with certain regulations and standards. Unfortunately this update did not perform well, and we've had to roll it back. <br><br>In order to return the volume to normal, I will need to ask you to perform a few steps with the Touchscreen Controller. Please let me know when you are ready for these steps.<br><br>
+
+				Thanks. Here are the steps to follow. Please make sure of the first step, as it is key to this process:<br>
+				1) First turn the hardware rocker volume switch on the side of the touchscreen all the way down.<br>
+				2) Press the “…” button on the top right of the touchscreen.<br>
+				3) Press “Settings”.<br>
+				4) Enter Master Keypad Code.<br>
+				5) Press “Security”.<br>
+				6) Press “Alarm Test”.<br>
+				7) Press “Next” on the bottom right of the screen.<br>
+				8) Press “Arm” on the top right of the screen. Then you will see that status update from “Arm to Arming”.<br>
+				9) As the touchscreen starts beeping (or reporting Arming), press the hardware rocker volume switch on the side of the touchscreen to the desired level.<br>
+				You will have about five seconds to do this during the test, so you will need to raise the volume using the rocker button, and do it quickly before the test ends.<br><br>If it helps, here is an article that details how to change the volume on the Touchscreen Controller:<br>https://www.xfinity.com/support/home-security/change-sound-settings-for-touchscreen/<br><br>To recap - Unfortunately your Touchscreen Controller was affected by an update that was applied, and then rolled back. Thankfully you were able to take a few steps with the controller to bring the volume back to normal. At this time there are no further questions.</p>
               </div>
             </div>
             <div><!-- container for info -->
@@ -532,14 +616,77 @@
             <input type="checkbox" id="247v">
             <label for="247v">24-7 Video Recording</label>
               <div class="sub"><!--sub level 1-->
-                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+                <p>
+24-7 Video Recording Requirements:<br><br>
+
+24/7 Video Recording-capable Cameras:<br>
+iCam2 (XFINITY Home only)<br>
+xCam<br>
+Internet upload speed of 2 Mbps or greater<br>
+The maximum number of Cameras that can be enabled for 24/7 Video Recording at the same time is four. If the service is already running on the maximum number of Cameras, you need to turn it off on one of those Cameras before you can turn it on for another.<br><br>
+
+24/7 Video Recording records video from your compatible Camera and saves it for 10 days. You can use the XFINITY Home app for mobile devices or your Subscriber Portal to view live video and review video clips automatically captured when your Camera detects motion.<br><br><br>
+
+DETERMINE WHICH SERVICE YOU HAVE:<br>
+The easiest way to determine which video service you have is by looking at the Camera screen.<br>
+The Overview screen shows the live video feed from your primary Camera.<br>
+Tap the Camera image.<br>
+If you have Live Video Monitoring, you'll see the Record Video and Take Picture buttons.<br>
+If you have 24/7 Video Recording, you'll see the Recording (REC) indicator and a list of motion events captured by your Cameras.<br><br><br>
+
+if it helps, here is a link that will detail how to enable and manage your 24/7 Video Recording Service.<br>
+https://www.xfinity.com/support/home-security/managing-24-7-video-recording-mobile-app/<br><br><br>
+
+To enable from app instructions:<br>
+The Overview screen shows the live video feed from your primary Camera.<br>
+Tap the Camera image.<br>
+On the Camera screen, tap the three dots at the upper right.<br>
+In the Camera Settings screen, tap the On/Off switch to turn 24/7 Video Recording On (blue switch with the circle to the right) or Off (gray switch with the circle to the left).<br>
+In the confirmation box, tap OK.<br>
+Repeat this process to turn on 24/7 Video Recording for another Camera.<br><br><br>
+Events are missing from my video.<br><br>
+
+Bookmarked video clips are saved when the Camera detects motion (an event). A break in the event timeline could be caused by one of the following:<br>
+Power loss<br>
+Internet outage<br>
+Loose Camera connection (if the Camera is hard-wired)<br>
+Internet upload speed doesn't meet the minimum 2 Mbps requirement<br>
+If poor connectivity seems to be the cause, try moving the Camera or router to another location.<br><br>
+
+If none of these seem to be the cause, reboot the Camera.</p>
               </div>
             </div>
             <div><!-- container for info -->
             <input type="checkbox" id="rules">
             <label for="rules">Rules - All</label>
               <div class="sub"><!--sub level 1-->
-                <p>NEED TO PUT INFO HERE MAY NEED TO NEST DOWN TO LEVEL 6</p>
+                <p>
+Rules<br>
+======<br><br>
+
+If it helps, here is a link that will detail how you can manage your rules from the Xfinity Home Mobile App:<br>
+https://www.xfinity.com/support/home-security/manage-rules-mobile-app-secure/?currentTopicId=afec3d0e-1af4-4c47-b1d5-7dc41bd25d37&currentCollectionId=afec3d0e-1af4-4c47-b1d5-7dc41bd25d37-3<br><br><br>
+
+The XFINITY Home app for mobile devices shows you all of your rules - both those you add in the app and, if you're an XFINITY Home - Secure customer, those you add in your XFINITY Home Subscriber Portal.<br><br>
+Rules that you add in the app can be viewed and managed only in the app. They won't appear in your Subscriber Portal.<br>
+For rules added in your Subscriber Portal, you can enable, disable, and delete them in the app, but if you want to change them, you'll need to use the Subscriber Portal.<br>
+We're always working on improving rules, so check out both the app and the Subscriber Portal to see the kinds of rules you can add in each. <br><br><br>
+
+TO VIEW RULES IN THE APP:<br><br>
+On the Overview screen, tap the Automation icon.<br>
+The Automation screen lists your existing rules. The top of the screen shows a recommended rule that you might want to add to your system. Swipe left or right to see other recommended rules.<br>
+The icon(s) to the left of the rule name tell you whether or not you can change the rule in the XFINITY Home app for mobile devices. A rule with multiple icons was added in the app and can be changed. A rule with only the Automation icon was added in the Subscriber Portal (XFINITY Home - Secure only) and cannot be changed in the app.<br>
+The icon(s) to the right of the rule name tell you the conditions that limit when the rule is active: Arm mode, Days, and Times. If there are no icons, the rule is always active. <br><br><br>
+
+
+BASIC RULES IN SUB PORTAL:<br><br>
+It sounds like these rules are the basic rules that came with the system. Is this correct?<br><br>
+
+In order to change the basic rules, you will need to access the previous version of the subscriber portal<br><br>
+
+To access the previous version of the subscriber portal, you will need to first access the current one. This can be found at: https://home.xfinity.com/<br>
+From here, you will need to find the link that says Previous Version of Subscriber Portal. From this version of the subscriber portal, you can access the rules and modify them from there.
+</p>
               </div>
             </div>
             <div><!-- container for info -->
@@ -590,14 +737,15 @@
             <input type="checkbox" id="num4tech">
             <label for="num4tech">Best # For Tech to Call</label>
               <div class="sub"><!--sub level 1-->
-              <p>What would be the best phone number to contact you at, in case the technician needs to speak with you about this visit?</p>
+              <p>Thanks. What would be the best phone number to contact you at, in case the technician needs to speak with you about this visit?</p>
               </div>
             </div>
             <div><!-- container for info -->
             <input type="checkbox" id="discotr">
             <label for="discotr">Truck Roll Disclosures</label>
               <div class="sub"><!--sub level 1-->
-              <p>While I pull up the list of available appointments, here are a few things you need to be aware of regarding your visit:</p>
+              <p>Thanks. While I pull up the list of available appointments, here are a few things you need to be aware of regarding your visit:<br><br>
+			  The first available appointment I have is on </p>
               </div>
             </div>
             <div><!-- container for info -->
@@ -608,27 +756,28 @@
               https://www.xfinity.com/support/account/customerservice/?collectionId=dc389984-5a08-4ef2-aa72-c39b1f73118c-2</p>
               </div>
             </div>
+			<div><p>Thanks. I can confirm that your appointment is set for<br><br>Would there happen to be anything else that I could assist with before we wrap up the chat?</p></div>
           </div>
-          <div id='ending'>Would there happen to be anything else that I could assist with today?
+          <div id='ending' style="text-indent: 15px; font-size: 15px;">Would there happen to be anything else that I could assist with today?
             <div><!-- container for info -->
             <input type="checkbox" id="okend">
             <label for="okend">Normal Ending</label>
               <div class="sub"><!--sub level 1-->
-              <p>Okay, we're just about done here. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+              <p>Okay, we're just about done. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
               </div>
             </div>
           <div><!-- container for info -->
           <input type="checkbox" id="noresp">
           <label for="noresp">No Response Ending</label>
             <div class="sub"><!--sub level 1-->
-            <p>Okay, if there is nothing else, we're just about done here. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+            <p>Okay, if there is nothing else, we're just about done. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
             </div>
           </div>
           <div><!-- container for info -->
           <input type="checkbox" id="uwelcome">
           <label for="uwelcome">You're welcome! Ending</label>
             <div class="sub"><!--sub level 1-->
-            <p>You're welcome! We're just about done here. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+            <p>You're welcome! We're just about done. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
             </div>
           </div>
           <div><!-- container for info -->
@@ -653,12 +802,12 @@
             </div>
           </div>
           <div><!-- container for info -->
-          <input type="checkbox" id="recap">
-          <label for="recap">Recap the chat</label>
-            <div class="sub"><!--sub level 1-->
-            <p>To recap - You've encountered an issue with ___</p>
+            <input type="checkbox" id="ticknum3">
+            <label for="ticknum3">Ticket Number for Conversation</label>
+              <div class="sub"><!--sub level 1-->
+              <p style="font-size: 14px;">The ticket number for this conversation is: #<span id="estic2"> </span></p>
+              </div>
             </div>
-          </div>
           <div><!-- container for info -->
           <input type="checkbox" id="surveyAsk">
           <label for="surveyAsk">Ask for survey</label>
@@ -675,10 +824,10 @@
           </div>
         </div>
           <div id='notes'>
-          <p>XHS MOBILE CHAT SUPPORT<br>
-            NCOE-SDC-BP-TGILL003<br>
-            Chat Ticket:<span id="chattic"> </span><br>
-            ITG Ticket:<span id="estic"> </span><br>
+          <p style="font-size: 18px;">XHS MOBILE CHAT SUPPORT<br>
+            NCOE-SDC-BP-<span id="bptic"></span><br>
+            Chat Ticket:#<span id="chattic"> </span><br>
+            ITG Ticket:#<span id="estic"> </span><br><br>
             ERONE Ticket:<span id="ertic"> </span><p>
           </div>
         </div><!--content wrap -->
@@ -687,13 +836,13 @@
         <span>This is a personal tool for work. Please do not distribute to anyone without my permission - Tasha</span><!-- inline element for now -->
       </div><!-- footer -->
       <div class="griditem"><!-- copypad css grid class 11 copypad-->
-        <textarea name="copypad" id="copypad" style="overflow-y: auto; overflow-x: auto;" cols="auto" rows="auto" placeholder="To review... Copy Paste Here, Not a Form."></textarea>
+        <textarea name="copypad" id="copypad" style="overflow-y: auto; overflow-x: auto; height: 100%; width: 98%;" placeholder="To review... Copy Paste Here, Not a Form."></textarea>
         <!-- copy paste area just in case -->
       </div><!-- copy pad -->
       <div class="griditem"><!-- timer css grid class 12 tickets-->
-        <span><textarea name="chatticket" style="width: 100%" cols="auto" rows="1" placeholder="Chat Ticket" onkeyup="updateTicket()"></textarea></span><br>
-        <span><textarea name="esticket" style="width: 100%" cols="auto" rows="1" placeholder="ES Ticket" onkeyup="updateTicket()"></textarea></span><br>
-        <span><textarea name="erone" style="width: 100%" cols="auto" rows="1" placeholder="ERONE" onkeyup="updateTicket()"></textarea></span>
+        <br><br><span><textarea name="chatNumber" style="width: 98%;" cols="auto" rows="1" placeholder="Chat Ticket" onkeyup="updateTicket()"></textarea></span><br><br>
+        <span><textarea name="esticket" style="width: 98%" cols="auto" rows="1" placeholder="ES Ticket" onkeyup="updateTicket()"></textarea></span><br><br>
+        <span><textarea name="erone" style="width: 98%" cols="auto" rows="1" placeholder="ERONE" onkeyup="updateTicket()"></textarea></span>
       </div><!-- simple timer-->
     </div><!--end grid class -->
 
