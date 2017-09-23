@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================= -->
+<!--      Layout for the page      -->
+<!--  Nav bar top menu with inputs -->
+<!--  Main content in center with  -->
+<!--  accordian panels show/hide   -->
+<!--  Side tabs that change content-->
+<!--  nav pills stacked on left    -->
+<!--  Side form for inputs and text-->
+<!--  Bottom footer w/ disclaimer  -->
+<!-- ============================= -->
+<html>
+  <head>
+    <title>ChatFlow - Bootstrapped</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="chatflowbootstyle.css">
+    <link rel="stylesheet" href="Supernice.css">
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+
+    <script type="text/javascript">
+    $(function() {
+      $(".expand").on( "click", function() {
+      $(this).next().slideToggle(200);
+      $expand = $(this).find(">:first-child");
+
+        if($expand.text() == "+") {
+          $expand.text("-");
+        } else {
+          $expand.text("+");
+        }
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <!--  Nav bar top menu with chat title and acct number inputs -->
+
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+          <img class="brandImage nlp" src="waves.png" alt="Chat Flow">
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <form class="navbar-form">
+            <div class="form-group">
+              <input type="text" maxlength="100" name="chatTitle" id="chatTitle" class="form-control" placeholder="Chat Title" onkeyup="chatTab()">
+            </div>
+            <div class="form-group navbar-right">
+              <input type="text" class="form-control" maxlength="20" name="acct" id="acct" placeholder="Account Number">
+            </div>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- Container for the three panels -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Left side is tabs -->
+        <div class="col-lg-3 tabbable myContainer2">
+            <!-- tabs left -->
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#intro" data-toggle="tab">Introduction</a></li>
+                    <li><a href="#verify" data-toggle="tab">Verify</a></li>
+                    <li><a href="#eqissues" data-toggle="tab">Equipment issues</a></li>
+                    <li><a href="#edissues" data-toggle="tab">Educational issues</a></li>
+                    <li><a href="#trs" data-toggle="tab">Truck Rolls</a></li>
+                    <li><a href="#ending" data-toggle="tab">Ending chat</a></li>
+                    <li><a href="#notes" data-toggle="tab">Notes</a></li>
+                </ul>
+        </div>
+        <!-- Center is divs that are hidden/revealed -->
+        <div class="col-lg-6 tab-content myContainer1">
+                    <div class="tab-pane" id="intro">
+                      <ul class="nav nav-pills nav-stacked">
+                        <li>
+
+                          <a class="expand">
+                            <div class="right-arrow ">+</div>
+                            <div><h4>Regular</h4></div>
+                          </a>
+                              <div class="detail">
+                                <p>Hi, this is <span id="myNamePut"></span>.<br><br>I understand that you are having issues with is this correct?<br><br>One moment as I review the previous chat.</p>
+                              </div>
+                        </li>
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow ">+</div>
+                            <div><h4>Call Me</h4></div>
+                          </a>
+                              <div class="detail">
+                                <p>I would be happy to call you when I am available; however, it may take some time to be able to do so. If you don't want to wait or if you need immediate assistance please call 1-800-XFINITY. <br><br>Otherwise I believe we can resolve this issue here in chat. Would you like to continue to troubleshoot here in chat?</p>
+                              </div>
+                        </li>
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow ">+</div>
+                            <div><h4>TPS</h4></div>
+                          </a>
+                              <div class="detail">
+                                <p>I understand you are an Xfinity Home TPS customer. I will be able to support some XFINITY Home questions, but may need to transfer you to the TPS support line depending on the issue. What is the issue that you are having today?</p>
+                                <br><p> Unfortunately, I am unable to further assist you today. I will have to connect you with the TPS Support team for further troubleshooting. I can either call you now and transfer you to our TPS Support line or, if you’d prefer, you can call the TPS support line directly at 1-888-586-2361. They're available 8 AM to 2 AM EST 7 days a week</p>
+                              </div>
+                        </li>
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Spanish</h4></div>
+                          </a>
+                              <div class="detail">
+                                <p>We do not support Spanish on chat at this time. Please call 1-800-XFINITY to contact a Spanish speaking agent.<br>En estos momentos no tenemos agentes en Espanol en nuestro chat. Si desea communicarse con un agente en Espanol por favor llame al 1-800-XFINITY (1-800-934-6489).</p>
+                              </div>
+                        </li>
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Misdirected</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thanks for confirming. I may have to suggest that you speak with ____ department regarding this issue, as they would be better able to assist.<br><br>
+                                They can be reached at the normal 1-800-XFINITY line.</p>
+                          </div>
+                        </li><!--Misdirected-->
+                      </ul>
+                    </div>
+                    <div class="tab-pane" id="verify">
+                      <ul class="nav nav-pills nav-stacked">
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>SSN</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thank you for confirming. In order to proceed, I will need to verfiy your account.
+                            <br>Could you please provide the following:
+                            <br> - Your First Name
+                            <br> - The last four digits of your Social Security Number</p>
+                          </div>
+                        </li>
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Full Account</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thank you for confirming. In order to proceed, I will need to verify your account information
+                            <br>Could you please provide the following:
+                            <br>- Your First name
+                            <br>- The full account number
+        					          <br><br>If you don't have the account number handy, you can download and install the 'Xfinity my account app' onto your phone. This link has instructions on how to recover the account number: https://www.xfinity.com/support/xfinity-apps/view-account-info-my-account-app/</p>
+                          </div>
+                        </li>
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Payment Method</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thank you for confirming. In order to proceed, I will need to verify your account information
+                            <br>Could you please provide the following:
+                            <br>- Your First name
+                            <br>- The last four of the payment method saved on your account</p>
+                          </div>
+                        </li>
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Verify over the Phone</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>If you would prefer to verify this information over the phone, I could give you a call to speak about the information, and then continue to troubleshoot here in chat. Would this be alright?</p>
+                          </div>
+                        </li>
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Verified</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thank you for verifying that information. It will take me a few moments to load your account.<br><br>
+                              Thanks. I am running a few automated checks on your system now.<br><br>
+              					      If I may, would you happen to be at the home right now?</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-pane" id="eqissues">
+                      <ul class="nav nav-pills nav-stacked">
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>What Equipment Type?</h4></div>
+                          </a>
+                          <div class="detail">
+                            <ul class="nav nav-pills nav-stacked">
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Modem</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>I will need to reboot your Modem. This reboot will take about three to five minutes. This will interrupt your Internet service and may prevent you from controlling the system from the app temporarily, while it is rebooting. Please let me know when it's okay to start that reboot.</p>
+                                </div>
+                              </li>
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Touchscreen</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Reboot the TS through ES360</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>I will need to reboot your Touchscreen Controller for some diagnostic information. In order to do that, your system should be disarmed. If I may, please let me know when the system is disarmed, so that I can start that reboot.<br><br>
+                						                    Thanks, sending the reboot instruction now. Please let me know when it begins to reboot, and when it gets back to it's normal home screen.</p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Reboot the TS Through Settings</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p> What you will need to do is the following:<br>
+                                          - First make sure your system is disarmed.<br>
+                                          - Press the three dots in the upper right corner.<br>
+                                          - A menu will pop down. Please Select Settings.<br>
+                                          - It will ask you for your Master Pin.<br>
+                                          (Generally the same pin you use to arm and disarm the system)<br>
+                                          - Scroll down the Categories screen to Advanced Settings.<br>
+                                          - Scroll down to Reboot Touchscreen.<br>
+                                          - Confirm you would like to reboot, and enter in Master Pin once more.</p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Touchscreen BBOffline</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>The Touchscreen Controller relies on your home network Wifi to send and receive commands from the App and Subscriber Portal<br>
+                                          If this connection is interrupted, your system will still work on a "local" level - meaning that you can arm and disarm from the Touchscreen Controller and Wireless Keypads, but not from the App or Subscriber Portal.<br><br>
+              							              I can assure you that your system is still monitoring your devices even when the network issue occurs. The Touchscreen Controller has a backup cellular connection that it uses only to update the Central Monitoring Station in the case of alarm events.<br><br>
+                                          To fix this issue, we will need to check your home networking equipment's connections, and reboot them if they are properly hooked up.<br><br>
+                                          From what I can see of your equipment set up, your Touchscreen Controller is connected to your All-In-One Xfinity Wireless Gateway.<br><br>
+                                          From what I can see of your equipment set up, your Touchscreen Controller is connected to your Netgear Security Router.<br><br>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Touchscreen Frozen</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <ul class="nav nav-pills nav-stacked">
+                                          <li>
+                                            <a class="expand">
+                                              <div class="right-arrow">+</div>
+                                              <div><h4>Black TCA 203</h4></div>
+                                            </a>
+                                            <div class="detail">
+                                              <p>Pinhole Reset<br>
+                                                I will need to ask you to reboot the Touchscreen Controller manually. <br><br>
+                                                To reboot it manually you will need a Phillips head (cross) screwdriver and a small paperclip. The screwdriver will be used to take the stand off, while the paper clip will be used to press a button in a small hole.<br><br>
+                                                The stand has two small screws on the bottom back of the Touchscreen controller. If there aren't screws there, it will look like there is a hole with gold colored metal inside.<br><br>
+                                                Once the screws are out, press down on the top of the stand so that it slides, and then pull it off of the Touchscreen controller.<br><br>
+                                                The battery cover of the Touchscreen controller should now be visible. It looks like a big rectangle with stickers on the top, and a rounded right side.<br><br>
+                                                Near the top left of the battery cover, is a very small hole. This is where the reset button is housed.<br><br>
+                                                I'll need to ask you to be very carefull not to press red the panic button as you do this next step, as it may cause a false alarm.<br><br>
+                                                You will need to put one end of the paper clip into the hole, and press it down into the hole for about ten seconds, or until the screen turns on.<br><br>
+                                                Please let me know if it does not turn on after 1 minute.<br><br>
+                                                Good to hear! As long as you are careful not to press the red panic button, you can re-attach the stand to the Touchscreen Controller.  </p>
+                                            </div>
+                                          </li>
+                                          <li>
+                                            <a class="expand">
+                                              <div class="right-arrow">+</div>
+                                              <div><h4>TS300 or white</h4></div>
+                                            </a>
+                                            <div class="detail">
+                                              <p>Pinhole Reset<br><br>
+                                                 To remove the battery cover from the back of the Touchscreen Controller, insert your finger into circular hole and pull down.<br><br>
+
+                                  								Remove the back plate from the back of the Touchscreen by pulling the center of the bottom edge upward, then sliding the top tabs out of the slots.<br><br>
+                                  								Feed the AC power cable through the circular hole on the back plate and connect to the power port on the back of the Touchscreen.<br><br>
+                                  								Snap the back plate to the back of the Touchscreen by inserting the top tabs into the slots first, then pressing the bottom into place. Ensure all slack from the AC power cable is pulled through the back plate.<br><br>
+                                  								Connect the stand to the back of the Touchscreen.</p>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </li> <!-- End of Touchscreen Frozen Nest -->
+                                  </ul>
+                                </div>
+                              </li>
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Camera</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Reboot Camera</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If I may, I'll ask you to powercycle the camera. This involves unplugging the camera for about twenty seconds, and then plugging it back in. This will reboot the camera. Please let me know, once you've done this, what the lights on the camera or power brick are doing.<br><br>
+                                          I will need to reboot your Modem. This reboot will take about three to five minutes. This will interrupt your Internet service and may prevent you from controlling the system from the app temporarily, while it is rebooting. Please let me know when it's okay to start that reboot.<br><br>
+                                          Thanks, sending the reboot instruction now. I will let you know when the system confirms that the reboot is complete.<br><br>
+                                          Next I will need to reboot your Touchscreen Controller for some diagnostic information. In order to do that, your system should be disarmed. If I may, please let me know when the system is disarmed, so that I can start that reboot.<br><br>
+                                          Thanks, sending the reboot instruction now. Please let me know when it begins to reboot, and when it gets back to it's normal home screen.</p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Camera Device Page in App</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is how to access the camera settings page in the app:<br>
+                                        https://www.xfinity.com/support/home-security/rename-camera-home-app/<br>
+                                        Although the article talks about renaming the camera, it will show you how to access it's device settings page.</p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Camera Connection Issues</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>Your Camera uses WiFi to broadcast it's live feed to both the Touchscreen Controller and your App/Subscriber Portal.<br>
+                                        Due to this, it will depend on the strength of your home network's WiFi signal.<br>
+                                        WiFi strength depends on the distance of the two devices and any interference that may be present.<br>
+                                        The distance you should keep your camera,(or Camera Power Brick if you have the xCam), from the Touchscreen Controller and your Modem or Router should be no more than 35 feet.<br>
+                                       Interference can be caused by  thick surfaces (e.g., concrete floors and walls) and other household electronics, such as baby monitors, cordless phones, microwave ovens, refrigerators and Bluetooth-connected devices. Also, try to avoid crowded areas, such as inside or behind furniture, like an entertainment console.<br>
+                                       What I would recommend is that you make sure that the Touchscreen Controller and the Modem or Router for your Internet connection both
+                                       have an uninterrupted line of sight to your Camera (or Camera Power Brick, if you have the xCam.)<br>
+                                       If there is interference, I will have to recommend that you move the modem and Touchscreen Controller closer to strengthen the WiFi signal for the camera.<br><br>If it helps, here is an article that details how to improve your wifi. The principles outlined there apply to your Secure devices as well:
+              							           https://www.xfinity.com/support/internet/improve-your-wireless-home-network/
+                                       </p>
+                                      </div>
+                                    </li>
+                                  </ul><!--camera nest-->
+                                </div>
+                              </li><!--Camera-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Sensor Communication Failure</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>If I may, have you had to change out the batteries in the sensor recently?<br><br>
+                        					If I may, I will ask you to reboot the sensor by taking the battery out for about twenty seconds, and then placing it back in.<br><br>
+                        					If I may, when you put the battery back in, was the light in the battery compartment solid or flashing?<br><br>
+                        					Thanks for confirming. This may indicate that it has lost it's connection to the system. We may need to schedule for a technician's visit to resolve this issue, would this be okay?<P>
+                                </div>
+                              </li><!--Sensor Comm-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Tamper Alert</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>A tamper alert message from a Sensor means that the cover to the sensor is not on all the way. If I may, could you check the cover on the sensor?<P>
+                                </div>
+                              </li><!--Tamper Alert-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Door / Window Sensors</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>XHS2-UE</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                          https://www.xfinity.com/support/home-security/installing-battery-xhs2-ue-sensor/</p>
+                                      </div>
+                                    </li><!--XHS2-UE-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Sercomm SZ-DWS04</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                          https://www.xfinity.com/support/home-security/installing-battery-sz-dws04-sensor/</p>
+                                      </div>
+                                    </li><!--Sercomm SZ-DWS04-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Visonic MCT-340</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                          https://www.xfinity.com/support/home-security/installing-battery-mct-340-sma-sensor/</p>
+                                      </div>
+                                    </li><!--Visonic MCT-340-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Visonic MCT-320</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                          https://www.xfinity.com/support/home-security/installing-battery-mct-320-sma-sensor/</p>
+                                      </div>
+                                    </li><!--Visonic MCT-320-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>SMCDW02-Z</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                          https://www.xfinity.com/support/home-security/installing-battery-smcdw02-z-sensor/</p>
+                                      </div>
+                                    </li><!--SMCDW02-Z-->
+                                  </ul><!--d/w snsr nest-->
+                                </div>
+                              </li><!--Door/Window Snsr-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Motion Sensors</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>XHS1-TY</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                  										  https://www.xfinity.com/support/home-security/installing-battery-xhs1-ty-motion-sensor/</p>
+                                      </div>
+                                    </li><!--XHS1-TY-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Visonic NEXT K85</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                  										  https://www.xfinity.com/support/home-security/installing-battery-next-k85-sma-motion-sensor/</p>
+                                      </div>
+                                    </li><!--Visonic NEXT K85-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>SMC</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                  										  https://www.xfinity.com/support/home-security/installing-battery-smcmt03-z-motion-sensor/</p>
+                                      </div>
+                                    </li><!--SMC-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Visonic Targeted</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                    										https://www.xfinity.com/support/home-security/installing-battery-clip-sma-motion-sensor/</p>
+                                      </div>
+                                    </li><!--Visonic Targeted-->
+                                  </ul>
+                                </div>
+                              </li><!--MotionSensors-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Thermostats</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>CentraLite</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                        https://www.xfinity.com/support/home-security/installing-batteries-3156105-thermostat/</p>
+                                      </div>
+                                    </li><!--CentraLite-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Homeworks</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                        https://www.xfinity.com/support/home-security/installing-batteries-ct30s-thermostat/</p>
+                                      </div>
+                                    </li><!--Homeworks-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Zen</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                        https://www.xfinity.com/support/home-security/installing-batteries-zen-01-w/</p>
+                                      </div>
+                                    </li><!--Homeworks-->
+                                  </ul>
+                                </div>
+                              </li><!--Thermostats-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Wireless Keypads</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>SMC SMCWK01-Z</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                        http://www.smc.com/video/keypadbattery/</p>
+                                      </div>
+                                    </li><!--SMC SMCWK01-Z-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>CentraLite Wireless Keypad</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                        https://www.xfinity.com/support/home-security/installing-battery-3400-keypad/</p>
+                                      </div>
+                                    </li><!--CentraLite Wireless Keypad-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>UEI XHK1-UE</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                        https://www.xfinity.com/support/home-security/installing-batteries-xhk1-ue-keypad/</p>
+                                      </div>
+                                    </li><!--UEI XHK1-UE-->
+                                  </ul>
+                                </div>
+                              </li><!--Wireless Keypads-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Smoke Detectors</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>Visonic MCT-427 SMA</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                        https://www.xfinity.com/support/home-security/installing-battery-mct-427-sma-smoke-detector/</p>
+                                      </div>
+                                    </li><!--Visonic MCT-427 SMA-->
+                                    <li>
+                                      <a class="expand">
+                                        <div class="right-arrow">+</div>
+                                        <div><h4>SMC SMCSM02-Z</h4></div>
+                                      </a>
+                                      <div class="detail">
+                                        <p>If it helps, here is a link to your device model's battery instructions:<br>
+                                        https://www.xfinity.com/support/home-security/installing-battery-smcsm02-z-smoke-detector/</p>
+                                      </div>
+                                    </li><!--SMC SMCSM02-Z-->
+                                  </ul>
+                                </div>
+                              </li><!--smoke detectors-->
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-pane" id="edissues">
+                      <ul class="nav nav-pills nav-stacked">
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Arming and Disarming</h4></div>
+                          </a>
+                          <div class="detail">
+                            <ul class="nav nav-pills nav-stacked">
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Modes</h4></div>
+                                </a>
+                                <div class="detail">
+                                  You can arm your XFINITY Home - Secure system in three modes: Arm Away, Arm Stay, and Arm Night.<br><br>
+
+                                  Arm Away gives you time to leave the house (Exit Delay) and then activates your system, including the Motion Sensors. When you come home, you have time to disarm the system (Entry Delay) so you don't trigger an alarm. If you activate Arm Away and no one leaves the house using a monitored door, the system automatically switches to Arm Stay mode.<br><br>
+
+                                  Arm Stay is for when you are at home and awake. Security features are activated as in Arm Away, but Motion Sensors are not (so you don't trip the alarm while you're in the house).<br><br>
+
+                                  Arm Night is for when you go to sleep. The system is activated as in Arm Away and Arm Stay, but with no Entry Delay when you disarm the system. Motion Sensors can be activated with or without an Exit Delay, depending on your setup. Typically, Motion Sensors are activated immediately in areas where you are not going to be, while Motion Sensors are delayed in places you'll pass through on your way to your bedroom.<br><br>
+
+                                </div>
+                              </li><!--Modes-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Exit Delays</h4></div>
+                                </a>
+                                <div class="detail">
+                                  EXIT DELAYS:<br><br>
+
+                                  ARM AWAY: If you open and shut an Entry/Exit door during the Exit Delay and then re-enter the house, the Exit Delay restarts at 120 seconds. It will only do this one time.
+                                  If an Entry/Exit door is left open at the end of Exit Delay, the Entry Delay immediately starts and, if the system is not disarmed, an alarm will sound.<br><br>
+
+                                  ARM STAY: If you open and shut an Entry or Exit door during the Exit Delay and then re-enter the premises, the Exit Delay restarts. It will only do this one time.
+                                  If an Entry or Exit door is left open at the end of Exit Delay, the Entry Delay immediately starts and, if the system is not disarmed, an alarm will sound.<br><br>
+
+                                  If you shut an Entry or Exit door during the Exit Delay and then re-enter the premises, the Exit Delay restarts. It will only do this one time.<br><br>
+                                  There is no entry delay for the Arm Night mode, the system will sound the siren. <br><br><br>
+                                </div>
+                              </li><!--Exit Delays-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>How to arm</h4></div>
+                                </a>
+                                <div class="detail">
+                                  HOW TO ARM:<br>
+                                  Wireless Keypads<br><br>
+                                  =================<br><br>
+
+                                  Press the Arm state you want the system in, and then your four digit pin. <br><br><br>
+
+                                  Disarm System<br><br>
+                                  ==============<br><br>
+                                  Open an Entry/Exit door.<br>
+                                  Listen for a tone indicating that the Entry Delay has started.<br>
+                                  Enter your Master Keypad Code or Secondary Keypad Code before the Entry Delay period ends.<br><br>
+
+                                  SMC is the only one where you enter in the code first, and then the arm state.<br><br>
+                                  ARM/DISARM FROM THE TOUCHSCREEN CONTROLLER:<br>
+                                  Tap the Security shield.<br>
+                                  On the Select Arm State screen, Away mode is already selected. To activate another mode, tap the icon for Stay or Night.<br>
+                                  Enter your keypad code. The Exit Delay begins.<br>
+                                  You have until the Exit Delay is over to exit the building. An entry/exit door must open and close during this period.<br>
+                                  Change Your Mind? To cancel arming, tap Cancel, and then enter your keypad code.<br>
+                                  Enter your keypad code before the Entry Delay ends. The system is disarmed.
+                                </div>
+                              </li><!--Howtoarm-->
+                            </ul>
+                          </div>
+                        </li><!--ArmingDisarming-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Central Monitoring Station Info</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>For general inquires, please call: 1-800-FORCOPS (367-2677)<br><br>
+                               To speak directly with a Central Monitoring Station Agent, please call: 1-800-633-2677</p>
+                          </div>
+                        </li><!--Central Monitoring Station-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Change Keypad Codes</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>From the Touchscreen, what you will need to do is the following:<br>
+                              - Press the three dots in the upper right corner.<br>
+                              - A menu will pop down. Please Select Settings.<br>
+                              - It will ask you for your Master Pin.<br>
+                                (Generally the same pin you use to arm and disarm the system)<br>
+                              - On the Categories screen, tap Security<br>
+                              - On the Security screen, tap Manage Keypad Codes<br>
+                              - Tap Edit next to the code you want to change<br>
+                              - If you want to change the access level (Standard, Guest, Arm Only) for a Secondary Keypad Code, you'll need to delete the code and create a new one with the access level that you want.<br>
+                              - The Master Keypad Code is always active. You cannot change the Active Days for this code.<br>
+                              - Click Save</p>
+                          </div>
+                        </li><!--Change Keypad Codes-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Volume Issues on Touchscreen</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thank you for confirming. There was an update that went out recently to bring the Touchscreen Controller sounds in line with certain regulations and standards. Unfortunately this update did not perform well, and we've had to roll it back. <br><br>In order to return the volume to normal, I will need to ask you to perform a few steps with the Touchscreen Controller. Please let me know when you are ready for these steps.<br><br>
+                      				Thanks. Here are the steps to follow:<br>
+                      				1) First turn the hardware rocker volume switch on the side of the touchscreen all the way down.<br>
+                      				2) Press the “…” button on the top right of the touchscreen.<br>
+                      				3) Press “Settings”.<br>
+                      				4) Enter Master Keypad Code.<br>
+                      				5) Press “Security”.<br>
+                      				6) Press “Alarm Test”.<br>
+                      				7) Press “Next” on the bottom right of the screen.<br>
+                      				8) Press “Arm” on the top right of the screen. Then you will see that status update from “Arm to Arming”.<br>
+                      				9) As the touchscreen starts beeping (or reporting Arming), press the hardware rocker volume switch on the side of the touchscreen to the desired level.<br>
+                      				Please make sure of the first step, as it is key to this process. You will have about five seconds to do this during the test, so you will need to raise the volume using the rocker button, and do it quickly before the test ends.<br><br>If it helps, here is an article that details how to change the volume on the Touchscreen Controller:<br>https://www.xfinity.com/support/home-security/change-sound-settings-for-touchscreen/<br><br>To recap - Unfortunately your Touchscreen Controller was affected by an update that was applied, and then rolled back. Thankfully you were able to take a few steps with the controller to bring the volume back to normal. At this time there are no further questions.</p>
+                          </div>
+                        </li><!--Volume Issues on Touchscreen-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Bypass Sensors</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>The bypass setting will allow you to arm your system if the device has encountered an issue that would normally prevent you from arming. However, once you disarm the system, the bypass setting is defaulted back to the "on" state. This means that you will need to bypass this sensor every time before you arm the system, or until the issue with that sensor is resolved. </p>
+                            <p>Bypass on App: From the Overview screen (the first one that shows when you launch the app), scroll down to the device that you would like to bypass. Press the three dots in the upper right of that device, which will take you to it's settings page. From there you should see an option for device on or off. Toggle the device off, and then go back to the overview screen to arm the system. If it helps, here is a link that details how to access the device settings screen and where to find the on/off toggle: <br>
+                            https://www.xfinity.com/support/home-security/getting-started-xh-mobile-app-secure/#zones</p>
+                          </div>
+                        </li><!--Bypass Sensors in the App-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>24-7 Video Recording</h4></div>
+                          </a>
+                          <div class="detail">
+                            <ul class="nav nav-pills nav-stacked">
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Determine your video service</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>The easiest way to determine which video service you have is by looking at the Camera screen.<br>
+                                  The Overview screen shows the live video feed from your primary Camera.<br>
+                                  Tap the Camera image.<br>
+                                  If you have Live Video Monitoring, you'll see the Record Video and Take Picture buttons.<br>
+                                  If you have 24/7 Video Recording, you'll see the Recording (REC) indicator and a list of motion events captured by your Cameras.<br><br>
+                                </div>
+                              </li><!--Determine video service-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Enable Service</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>if it helps, here is a link that will detail how to enable and manage your 24/7 Video Recording Service.<br>
+                                  https://www.xfinity.com/support/home-security/managing-24-7-video-recording-mobile-app/<br><br><br>
+
+                                  To enable from app instructions:<br>
+                                  The Overview screen shows the live video feed from your primary Camera.<br>
+                                  Tap the Camera image.<br>
+                                  On the Camera screen, tap the three dots at the upper right.<br>
+                                  In the Camera Settings screen, tap the On/Off switch to turn 24/7 Video Recording On (blue switch with the circle to the right) or Off (gray switch with the circle to the left).<br>
+                                  In the confirmation box, tap OK.<br>
+                                  Repeat this process to turn on 24/7 Video Recording for another Camera.<br><br><br>
+                                  Events are missing from my video.<br><br>
+                                </div>
+                              </li><!--Determine video service-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Missing Recordings</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>Bookmarked video clips are saved when the Camera detects motion (an event). A break in the event timeline could be caused by one of the following:<br>
+                                  Power loss<br>
+                                  Internet outage<br>
+                                  Loose Camera connection (if the Camera is hard-wired)<br>
+                                  Internet upload speed doesn't meet the minimum 2 Mbps requirement<br>
+                                  If poor connectivity seems to be the cause, try moving the Camera or router to another location.<br><br>
+
+                                  If none of these seem to be the cause, reboot the Camera.</p>
+                                </div>
+                              </li><!--Missing Recordings-->
+                            </ul>
+                          </div>
+                        </li><!--24/7 Video-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Rules</h4></div>
+                          </a>
+                          <div class="detail">
+                            <ul class="nav nav-pills nav-stacked">
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>About Rules</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>
+                                  Rules<br>
+                                  ======<br><br>
+
+                                  If it helps, here is a link that will detail how you can manage your rules from the Xfinity Home Mobile App:<br>
+                                  https://www.xfinity.com/support/home-security/manage-rules-mobile-app-secure/?currentTopicId=afec3d0e-1af4-4c47-b1d5-7dc41bd25d37&currentCollectionId=afec3d0e-1af4-4c47-b1d5-7dc41bd25d37-3<br><br><br>
+
+                                  The XFINITY Home app for mobile devices shows you all of your rules - both those you add in the app and, if you're an XFINITY Home - Secure customer, those you add in your XFINITY Home Subscriber Portal.<br><br>
+                                  Rules that you add in the app can be viewed and managed only in the app. They won't appear in your Subscriber Portal.<br>
+                                  For rules added in your Subscriber Portal, you can enable, disable, and delete them in the app, but if you want to change them, you'll need to use the Subscriber Portal.<br>
+                                  We're always working on improving rules, so check out both the app and the Subscriber Portal to see the kinds of rules you can add in each. <br><br><br>
+                                </div>
+                              </li><!--About Rules-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Rules in App</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>
+                                    On the Overview screen, tap the Automation icon.<br>
+                                    The Automation screen lists your existing rules. The top of the screen shows a recommended rule that you might want to add to your system. Swipe left or right to see other recommended rules.<br>
+                                    The icon(s) to the left of the rule name tell you whether or not you can change the rule in the XFINITY Home app for mobile devices. A rule with multiple icons was added in the app and can be changed. A rule with only the Automation icon was added in the Subscriber Portal (XFINITY Home - Secure only) and cannot be changed in the app.<br>
+                                    The icon(s) to the right of the rule name tell you the conditions that limit when the rule is active: Arm mode, Days, and Times. If there are no icons, the rule is always active. <br><br>
+                                </div>
+                              </li><!--Rules in app-->
+                              <li>
+                                <a class="expand">
+                                  <div class="right-arrow">+</div>
+                                  <div><h4>Rules in Sub Portal</h4></div>
+                                </a>
+                                <div class="detail">
+                                  <p>
+                                    It sounds like these rules are the basic rules that came with the system. Is this correct?<br><br>
+
+                                    In order to change the basic rules, you will need to access the previous version of the subscriber portal<br><br>
+
+                                    To access the previous version of the subscriber portal, you will need to first access the current one. This can be found at: https://home.xfinity.com/<br>
+                                    From here, you will need to find the link that says Previous Version of Subscriber Portal. From this version of the subscriber portal, you can access the rules and modify them from there.
+                                    </p>
+                                </div>
+                              </li><!--Rules in app-->
+                            </ul><!--Rules-->
+                          </div>
+                        </li><!--Rules-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Works With XHS</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>I may have to suggest that you check if you are able to control the device through the manufacturer's app. Could you check this, please?<br><br>
+                            Thanks. Next I will have to recommend that you remove the device from the app, and then pair it again.<br><br>
+                            Thanks, again. I will have to suggest that you wait a few minutes and try again, with the Xfinity Home App.
+                          </p>
+                          </div>
+                        </li><!--Works With XHS-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Additional Equipment</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>I understand that you are interested in purchasing and installing additional equipment, is this correct?<br><br>
+                              How many devices did you want to purchase?<br><br>
+                              Cameras are $199.95 each without the 24/7 promotion.<br><br>
+                              Cameras are $99.95 each, with each subscription that you purchase.<br><br>
+                              The cost for the 24/7 Video Recording service is $9.95 per camera, per month.<br><br>
+                              Thank you for confirming. It will take me just one moment to put the order in, and then we will have you confirm the order through either Text message, or email.<br><br>
+                              What would be the best phone number to send this text to?<br><br>
+                              Once you receive the text message, please click the link to open your order summary. Please review the order, and if you approve of the order, click the "I agree" button to confirm.<br><br>
+                              What would be the best email address to send this summary to?<br><br>
+                              Once you receive the email message, please click the link to open your order summary. Please review the order, and if you approve of the order, click the "I agree" button to confirm.<br><br>
+                              Thanks! I can confirm that your order is complete.<br><br>
+                              One moment as I pull up the list of available appointment times for the installation.<br><br>
+                              The first available appointment time I have is ____. Would this be okay?<br><br>
+                              Thanks. I can confirm that your appointment is set for ______.
+                              </p>
+                          </div>
+                        </li><!--Additional Equipment-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>CTV / CTN</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>On the Overview screen:<br>
+                                If you have an Android device, tap the three dots at the top right of the screen, then tap Settings.<br>
+                                If you have an Apple device, tap More at the bottom right of the screen, then tap Settings.<br>
+                                Tap Security.<br>
+                                Check that the people you want contacted during an emrgency are listed in the Emergency Verification Contacts and Emergency Dispatch Contacts sections and that their phone numbers are correct.<br>
+                                Verification Contacts are contacted to verify an emergency when an alarm is triggered.<br>
+                                Dispatch Contacts are notified of an emergency and that the police are on the way after an emergency has been verified.<br>
+                                You can have a maximum of two Verification Contacts and two Dispatch Contacts. Once you reach the maximum, you won't be able to add a new contact without first deleting one.<br><br>
+                                To add a contact:<br>
+                                Tap Add Contact.<br>
+                                Enter your 4-digit Master Keypad Code, then tap Continue.<br>
+                                Enter the contact's first and last name.<br>
+                                Enter their phone number. Don't include spaces or dashes.<br>
+                                Select the phone number type.<br>
+                                Tap Save.<br><br>
+                                To edit a contact:<br>
+                                Tap the pencil icon next to the contact you want to change.<br>
+                                Enter your 4-digit Master Keypad Code, then tap Continue.<br>
+                                Enter the new information.<br>
+                                Tap Save.<br><br>
+                                To delete a contact:<br>
+                                Tap the pencil icon next to the contact you want to delete.<br>
+                                Tap Delete.<br>
+                                Tap Delete to confirm.<br>
+                                Note: You must have at least one Emergency Verification Contact.<br></p>
+                          </div>
+                        </li><!--CTV / CTN-->
+                      </ul><!--Educational Issues-->
+                    </div>
+                    <div class="tab-pane" id="trs">
+                      <ul class="nav nav-pills nav-stacked">
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Recommend TR</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>To better assist you with this issue, I may have to reccomend that we schedule for a technician's visit. Would this be okay?</p>
+                          </div>
+                        </li><!--recommend tr-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Why the charge?</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>There is always the possibility of charges when it comes to a technician's visit. Unfortunately I am not able to give you an estimate or exact quote as to what those charges are, considering they are assessed by the Technician who performs the service visit.</p>
+                          </div>
+                        </li><!--why the charge?-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Best # for the Tech to call</h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thanks. What would be the best phone number to contact you at, in case the technician needs to speak with you about this visit?</p>
+                          </div>
+                        </li><!--best #-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Truck Roll Disclosures </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thanks. While I pull up the list of available appointments, here are a few things you need to be aware of regarding your visit:<br><br>
+              			             The first available appointment I have is on </p>
+                          </div>
+                        </li><!--Truck Roll Disclosures -->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Link to manage appt online </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>If it helps, here is a link that will detail how you can manage this appointment:<br>
+                            https://www.xfinity.com/support/account/customerservice/?collectionId=dc389984-5a08-4ef2-aa72-c39b1f73118c-2</p>
+                          </div>
+                        </li><!-- Link to manage appt online-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Confirm </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thanks. I can confirm that your appointment is set for<br><br>Would there happen to be anything else that I could assist with before we wrap up the chat?</p>
+                          </div>
+                        </li><!--Confirm TR -->
+                      </ul>
+                    </div>
+                    <div class="tab-pane" id="ending">
+                      <ul class="nav nav-pills nav-stacked">
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Normal Ending </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Okay, we're just about done. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+                          </div>
+                        </li><!--Normal Ending -->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>No Response Ending </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Okay, if there is nothing else, we're just about done. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+                          </div>
+                        </li><!--No Response Ending-->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>You're welcome! Ending </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>You're welcome! We're just about done. I'll recap the conversation, provide you with a ticket number, and then we'll close the chat.</p>
+                          </div>
+                        </li><!--You're welcome! Ending -->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Leave the Chat Open </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Okay. We'll leave this chat open if you need to return for further assistance. You will see two messages ask if you are still available to chat. You can ignore these messages until you come back to the chat.</p>
+                          </div>
+                        </li><!--Leave the Chat Open -->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Advanced Support </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>I have created a ticket for our Advanced Support agent to call you at ____ within 5 business days between the hours of 9AM to 9PM. If for some reason, we miss reaching you at that time, you can call our Advanced Support team anytime at 1-800-934-6489</p>
+                          </div>
+                        </li><!--Advanced Support -->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>After Operating Hours </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Thanks for contacting us! Our chat hours are 7am – 11pm EDT. We will be here to support you if you can chat with us again tomorrow. If you need help in the meantime, please call us at 1-800-XFINITY.</p>
+                          </div>
+                        </li><!--After Operating Hours -->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Ticket Number for Conversation </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p style="font-size: 14px;">The ticket number for this conversation is: #<span id="estic2"> </span></p>
+                          </div>
+                        </li><!--Ticket Number for Conversation -->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Ask for survey </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>Once our chat ends, you'll be prompted for a short survey on the service you received today. I appreciate any feedback you provide so I can be sure I'm providing the best service possible.</p>
+                          </div>
+                        </li><!--Ask for survey -->
+                        <li>
+                          <a class="expand">
+                            <div class="right-arrow">+</div>
+                            <div><h4>Last Message - Resolve </h4></div>
+                          </a>
+                          <div class="detail">
+                            <p>If you have any other issues or questions, feel free to reach us via chat, call us at 1-800-XFINITY for 24/7 assistance or you can visit our help site at https://www.xfinity.com/support/ Hope you have a great day!</p>
+                          </div>
+                        </li><!--Last Message - Resolve -->
+                      </ul>
+                    </div>
+                    <div class="tab-pane" id="notes">
+                      <p style="font-size: 18px;">XHS MOBILE CHAT SUPPORT<br>
+                        NCOE-SDC-BP-<span id="bptic"></span><br>
+                        Chat Ticket:#<span id="chattic"> </span><br>
+                        ITG Ticket:#<span id="estic"> </span><br><br>
+                        ERONE Ticket:<span id="ertic"> </span><p>
+                    </div>
+                </div>
+        <!-- Right is form inputs and text area -->
+        <div class="col-lg-3 container">
+          <textarea rows="10" cols="50" id="copypad">To recap - </textarea>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" id="chatNumber" name="chatNumber" cols="auto" rows="1" placeholder="Chat Ticket" onkeyup="updateTicket()">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="esticket" cols="auto" rows="1" placeholder="ES Ticket" onkeyup="updateTicket()">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="erone" cols="auto" rows="1" placeholder="ERONE" onkeyup="updateTicket()">
+            </div>
+          </form>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" name="myName" class="form-control" id="myName" placeholder="Name" onkeyup="updateTicket()">
+              <button class="btn btn-sm btn-info" type="button" id="saveInfo" onClick="setInputs">Save my Info</button>
+            </div>
+            <div class="form-group">
+              <input type="text" name="myBPID" class="form-control" id="myBPID" placeholder="BP ID" onkeyup="updateTicket()">
+              <button class="btn btn-sm btn-info" type="button" id="clearInfo" onClick="clearInputs">Clear my Info</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  <!--  Bottom footer w/ disclaimer  -->
+  <div class="footer">
+    This is a personal Tool for work, please do not distribute without my permission. Thanks! -Tasha
+  </div>
+  <script type="text/javascript" src="chatflow.js"></script>
+  </body>
+</html>

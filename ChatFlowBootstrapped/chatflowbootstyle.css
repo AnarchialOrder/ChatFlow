@@ -1,0 +1,73 @@
+/*Testing to see placements*/
+/*div{
+  border: 1px solid purple;
+}*/
+body{
+  background-color: black;
+}
+.brandImage{
+  height: 65px;
+  width: 80px;
+  margin-left: -30px;
+  margin-bottom: -8px;
+  margin-right: 10px;
+  opacity: .8;
+}
+.formAlign{
+  padding: 5px;
+}
+/*No left Padding*/
+.nlp{
+  padding-left: 0;
+}
+#chatTitle{
+  width: 800px;
+}
+#acct{
+  width: 300px;
+}
+#chatNumber, #esticket, #erone{
+  width: 375px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: -15px;
+  color: #64676b;
+  background-color: black;
+}
+.right-arrow {
+    width: 20px;
+    height: 100%;
+    float: right;
+    font-weight: bold;
+    font-size: 20px;
+}
+.detail {
+    margin: 10px 0 10px 0px;
+    display: none;
+    line-height: 22px;
+    color: #64676b;
+    padding-left: 35px;
+}
+.expand {
+    display: block;
+    text-decoration: none;
+    color: #555;
+    cursor: pointer;
+}
+.myContainer2, .myContainer1{
+  height: 450px;
+  overflow: auto;
+  border: 2px solid #1360b3;
+}
+
+#copypad, #myName, #myBPID, #chatTitle, #acct{
+  color: #64676b;
+  background-color: black;
+}
+#saveInfo, #clearInfo{
+  margin-left: 10px;
+  color: #64676b;
+}
+#myName, #myBPID{
+  margin: 5px;
+}
